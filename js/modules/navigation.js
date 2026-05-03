@@ -349,7 +349,7 @@ export function showEntertainment() {
     showToast('Already viewing Entertainment');
     return;
   }
-  hideAll();
+  hideMainContent();
   if (entertainmentEl) {
     entertainmentEl.classList.remove('fade-hidden');
     entertainmentEl.style.display = 'block';
@@ -364,10 +364,45 @@ export function showEntertainment() {
     document.body.style.paddingTop = '0px';
   }
   window.scrollTo({ top: 0, behavior: 'smooth' });
-  setTimeout(reveal, 100);
-  if (typeof window.reinitScrollAnimations === 'function') {
-    setTimeout(() => window.reinitScrollAnimations(), 100);
+  setTimeout(() => revealEntertainment(entertainmentEl), 100);
+}
+
+/**
+ * Hide only main content sections (lightweight hide for entertainment)
+ */
+function hideMainContent() {
+  const firstPage = document.querySelector('.first_page');
+  if (firstPage) {
+    firstPage.style.display = 'none';
+    firstPage.classList.remove('page-active');
   }
+  const pdfs = document.getElementById('pdfSection');
+  if (pdfs) pdfs.style.display = 'none';
+  const aadhar = document.getElementById('aadhar-section');
+  if (aadhar) aadhar.style.display = 'none';
+  const entertainment = document.getElementById('entertainment-page');
+  if (entertainment) entertainment.style.display = 'none';
+  const packing = document.getElementById('packing-section');
+  if (packing) packing.style.display = 'none';
+  document.querySelectorAll('[id^=day]').forEach((d) => {
+    d.style.display = 'none';
+    d.classList.remove('page-active');
+    d.classList.add('fade-hidden');
+  });
+  document.body.style.paddingTop = '0px';
+}
+
+/**
+ * Reveal elements only within entertainment section
+ */
+function revealEntertainment(container) {
+  if (!container) return;
+  const reveals = container.querySelectorAll('.reveal-on-scroll, .reveal');
+  reveals.forEach((el, index) => {
+    el.classList.remove('is-visible');
+    el.classList.add('reveal-on-scroll');
+    setTimeout(() => el.classList.add('is-visible'), index * 50);
+  });
 }
 
 /**

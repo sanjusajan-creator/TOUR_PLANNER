@@ -768,41 +768,41 @@ window.onload = () => {
 };
 
 function setInitialDate() {
-   const dateInput = document.getElementById("journey-date");
-   const display = document.getElementById("formatted-date-display");
-   const now = new Date();
+    const dateInput = document.getElementById("journey-date");
+    const display = document.getElementById("formatted-date-display");
+    const now = new Date();
 
-   const tripStartDate = new Date("2026-05-24T00:00:00");
-   const tripEndDate = new Date("2026-05-26T23:59:59");
+    const tripStartDate = new Date("2026-05-24T00:00:00");
+    const tripEndDate = new Date("2026-05-26T23:59:59");
 
-   let initialDate;
+    let initialDate;
 
-   if (now < tripStartDate) {
-     initialDate = tripStartDate;
-     const badge = document.querySelector(".auto-lock-badge");
-     if (badge) badge.style.display = "inline-block";
-   } 
-   else if (now >= tripStartDate && now <= tripEndDate) {
-     initialDate = now;
-     const badge = document.querySelector(".auto-lock-badge");
-     if (badge) badge.style.display = "inline-block";
-   }
-   else {
-     initialDate = now;
-     const badge = document.querySelector(".auto-lock-badge");
-     if (badge) badge.style.display = "none";
-   }
+    if (now < tripStartDate) {
+      initialDate = tripStartDate;
+      const lockBadges = document.querySelectorAll(".auto-lock-badge.lock-badge");
+      lockBadges.forEach(b => b.style.display = "inline-block");
+    } 
+    else if (now >= tripStartDate && now <= tripEndDate) {
+      initialDate = now;
+      const lockBadges = document.querySelectorAll(".auto-lock-badge.lock-badge");
+      lockBadges.forEach(b => b.style.display = "inline-block");
+    }
+    else {
+      initialDate = now;
+      const lockBadges = document.querySelectorAll(".auto-lock-badge.lock-badge");
+      lockBadges.forEach(b => b.style.display = "none");
+    }
 
-   const y = initialDate.getFullYear();
-   const m = String(initialDate.getMonth() + 1).padStart(2, "0");
-   const d = String(initialDate.getDate()).padStart(2, "0");
+    const y = initialDate.getFullYear();
+    const m = String(initialDate.getMonth() + 1).padStart(2, "0");
+    const d = String(initialDate.getDate()).padStart(2, "0");
 
-   if (dateInput) {
-     dateInput.value = `${y}-${m}-${d}`;
-   }
-   if (display) {
-     display.innerText = `${d}/${m}/${y}`;
-   }
+    if (dateInput) {
+      dateInput.value = `${y}-${m}-${d}`;
+    }
+    if (display) {
+      display.innerText = `${d}/${m}/${y}`;
+    }
 }
 
 function handleDateChange(val) {
@@ -1604,6 +1604,16 @@ function updateThiruvananthapuramTracker() {
           statusBadge.className = "auto-lock-badge bg-danger-subtle text-danger";
           statusBadge.innerHTML = '<i class="bi bi-geo-alt-fill"></i> Live Trip';
         }
+      }
+    }
+    
+    // Toggle lock badge visibility
+    const lockBadge = document.getElementById('thiruvananthapuram-lock-badge');
+    if (lockBadge) {
+      if (todayStart < tripStartDate && selectedDateValue === "2026-05-31") {
+        lockBadge.style.display = "inline-block";
+      } else {
+        lockBadge.style.display = "none";
       }
     }
   } catch (e) {
