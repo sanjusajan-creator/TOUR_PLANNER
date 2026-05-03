@@ -952,6 +952,40 @@ const marudharFullRoute = [
   { name: "Raika Bagh P Jn", code: "RKB", day: 2, time: "17:10", dist: 1166 },
   { name: "Jodhpur Jn", code: "JU", day: 2, time: "17:30", dist: 1168 },
 ];
+
+const ThiruvananthapuramFullRoute = [
+  { name: "Amritsar Jn", code: "ASR", day: 1, time: "00:00", dist: 0 },
+  { name: "Beas", code: "BEAS", day: 1, time: "06:23", dist: 43 },
+  { name: "Jalandhar City", code: "JUC", day: 1, time: "07:02", dist: 79 },
+  { name: "Ludhiana Jn", code: "LDH", day: 1, time: "08:02", dist: 136 },
+  { name: "Ambala Cant Jn", code: "UMB", day: 1, time: "10:00", dist: 250 },
+  { name: "Bhodwal Majri", code: "BDMJ", day: 1, time: "11:35", dist: 382 },
+  { name: "New Delhi", code: "NDLS", day: 1, time: "12:55", dist: 448 },
+  { name: "H Nizamuddin", code: "NZM", day: 1, time: "13:21", dist: 455 },
+  { name: "Kota Jn", code: "KOTA", day: 1, time: "18:05", dist: 913 },
+  { name: "Ratlam Jn", code: "RTM", day: 1, time: "21:30", dist: 1179 },
+  { name: "Vadodara Jn", code: "BRC", day: 2, time: "01:15", dist: 1440 },
+  { name: "Surat", code: "ST", day: 2, time: "03:00", dist: 1569 },
+  { name: "Udhna Jn", code: "UDN", day: 2, time: "03:14", dist: 1573 },
+  { name: "Vasai Road", code: "BSR", day: 2, time: "05:55", dist: 1784 },
+  { name: "Panvel", code: "PNVL", day: 2, time: "07:27", dist: 1852 },
+  { name: "Chiplun", code: "CHI", day: 2, time: "11:00", dist: 2108 },
+  { name: "Ratnagiri", code: "RN", day: 2, time: "12:25", dist: 2214 },
+  { name: "Madgaon", code: "MAO", day: 2, time: "17:10", dist: 2548 },
+  { name: "Udupi", code: "UD", day: 2, time: "21:18", dist: 2898 },
+  { name: "Mangaluru Jn", code: "MAJN", day: 2, time: "23:45", dist: 2979 },
+  { name: "Kasaragod", code: "KGQ", day: 3, time: "00:34", dist: 3030 },
+  { name: "Kannur", code: "CAN", day: 3, time: "01:52", dist: 3116 },
+  { name: "Kozhikode", code: "CLT", day: 3, time: "03:10", dist: 3205 },
+  { name: "Shoranur Jn", code: "SRR", day: 3, time: "04:55", dist: 3291 },
+  { name: "Thrisur", code: "TCR", day: 3, time: "06:05", dist: 3324 },
+  { name: "Ernakulam Jn", code: "ERS", day: 3, time: "07:55", dist: 3398 },
+  { name: "Alleppey", code: "ALLP", day: 3, time: "09:27", dist: 3455 },
+  { name: "Kayankulam Jn", code: "KYJ", day: 3, time: "10:08", dist: 3498 },
+  { name: "Kollam Jn", code: "QLN", day: 3, time: "10:42", dist: 3539 },
+  { name: "Trivandrum North", code: "TVCN", day: 3, time: "12:30", dist: 3597 },
+];
+
 function initMarudharTrack() {
   const container = document.getElementById("marudhar-stations-container");
   if (!container) return;
@@ -1182,6 +1216,38 @@ document.addEventListener("DOMContentLoaded", function () {
   }
   if (typeof initSainikTrack === "function") initSainikTrack();
   updateSainikTracker();
+
+  const ThiruvananthapuramInput = document.getElementById("thiruvananthapuram-date");
+  if (ThiruvananthapuramInput) {
+    ThiruvananthapuramInput.value = getThiruvananthapuramSmartInitialDate();
+    ThiruvananthapuramInput.value = "2026-05-31";
+  }
+  if (typeof initThiruvananthapuramTrack === "function") {
+    initThiruvananthapuramTrack();
+  }
+  setTimeout(() => updateThiruvananthapuramTracker(), 100);
+
+  document.querySelectorAll('[data-action="update-thiruvananthapuram"]').forEach(el => {
+    el.addEventListener("click", () => {
+      updateThiruvananthapuramTracker();
+    });
+  });
+
+  document.querySelectorAll('[data-action="set-thiruvananthapuram-today"]').forEach(el => {
+    el.addEventListener("click", (e) => {
+      e.stopPropagation();
+      const input = document.getElementById("thiruvananthapuram-date");
+      if (input) {
+        input.value = getThiruvananthapuramSmartInitialDate();
+        updateThiruvananthapuramTracker();
+      }
+    });
+  });
+
+  const ThiruvananthapuramDateInput = document.getElementById("thiruvananthapuram-date");
+  if (ThiruvananthapuramDateInput) {
+    ThiruvananthapuramDateInput.addEventListener("change", () => updateThiruvananthapuramTracker());
+  }
 });
 
 window.addEventListener("resize", () => {
@@ -1379,6 +1445,183 @@ function getSainikSmartInitialDate() {
 
   if (now < tripStartDate) {
     return "2026-05-28";
+  } else {
+    return now.toISOString().split("T")[0];
+  }
+}
+
+function initThiruvananthapuramTrack() {
+  const container = document.getElementById("thiruvananthapuram-stations-container");
+  if (!container) {
+    console.log("Container not found");
+    return;
+  }
+  container.innerHTML = "";
+
+  const totalDist = 3597;
+  const isMobile = window.innerWidth <= 768;
+  const keyStations = new Set([0, 4, 8, 12, 16, 20, 24, 28, 29]);
+
+  ThiruvananthapuramFullRoute.forEach((stn, index) => {
+    const pos = (stn.dist / totalDist) * 100;
+    const marker = document.createElement("div");
+    const isKey = keyStations.has(index);
+
+    marker.style.position = "absolute";
+    marker.style.left = pos + "%";
+    marker.style.top = "12px";
+    marker.style.transform = "translateX(-50%)";
+    marker.style.textAlign = "center";
+    
+    if (isMobile && !isKey) {
+      marker.style.visibility = "hidden";
+      marker.style.opacity = "0";
+    }
+    marker.className = "marudhar-stn-marker";
+
+    marker.innerHTML = `
+      <div style="background: ${isKey ? '#dc3545' : '#6c757d'}; color: white; font-size: 8px; padding: 1px 3px; border-radius: 2px; white-space: nowrap;">${stn.code}</div>
+      ${isKey ? `<div style="font-size: 7px; color: #333; margin-top: 2px; font-weight: bold;">${stn.name.substring(0, 8)}</div>` : ''}
+    `;
+    container.appendChild(marker);
+  });
+}
+
+function updateThiruvananthapuramTracker() {
+  try {
+    const input = document.getElementById("thiruvananthapuram-date");
+    const countdownWrap = document.getElementById("thiruvananthapuram-countdown-wrap");
+    const countdownText = document.getElementById("thiruvananthapuram-countdown-text");
+    const statusBadge = document.getElementById("thiruvananthapuram-status-badge");
+    const statusBox = document.getElementById("thiruvananthapuram-status-text");
+    const statusTextMain = document.getElementById("thiruvananthapuram-status-text-main");
+    const fill = document.getElementById("thiruvananthapuram-progress-fill");
+    const train = document.getElementById("thiruvananthapuram-train-icon");
+    const percentText = document.getElementById("thiruvananthapuram-percent");
+    const prevLabel = document.getElementById("thiruvananthapuram-prev");
+    const nextLabel = document.getElementById("thiruvananthapuram-next");
+    const dateDisplay = document.getElementById("thiruvananthapuram-date-display");
+
+    if (!input) return;
+
+    const now = new Date();
+    const selectedDateValue = input.value;
+
+    if (dateDisplay) {
+      dateDisplay.innerText = new Date(selectedDateValue).toLocaleDateString("en-GB");
+    }
+
+    const tripStartDate = new Date("2026-05-31T00:00:00");
+    const tripEndDate = new Date("2026-06-03T23:59:59");
+    const todayStart = new Date();
+    todayStart.setHours(0, 0, 0, 0);
+
+    const depTime = new Date(selectedDateValue + "T13:10:00");
+    const totalJourneyMinutes = 2732;
+    const elapsed = Math.floor((now - depTime) / 60000);
+
+    let pct = (elapsed / totalJourneyMinutes) * 100;
+    pct = Math.max(0, Math.min(100, pct));
+
+    if (fill) fill.style.width = pct + "%";
+    if (train) train.style.left = pct + "%";
+    if (percentText) percentText.innerText = Math.floor(pct) + "% Completed";
+
+    if (todayStart < tripStartDate && selectedDateValue === "2026-05-31") {
+      const diffInMs = tripStartDate - todayStart;
+      const diffInDays = Math.round(diffInMs / (1000 * 60 * 60 * 24));
+      if (countdownWrap) {
+        countdownWrap.style.display = "block";
+        if (countdownText) countdownText.innerText = `${diffInDays} ${diffInDays === 1 ? "Day" : "Days"} to Departure`;
+      }
+      if (statusBox) statusBox.innerText = "Journey Pending";
+      if (statusTextMain) statusTextMain.innerText = "Journey Pending";
+      if (statusBadge) {
+        statusBadge.className = "auto-lock-badge bg-warning-subtle text-dark";
+        statusBadge.innerHTML = '<i class="bi bi-clock"></i> Upcoming';
+      }
+      if (fill) fill.style.width = "0%";
+      if (train) train.style.left = "0%";
+      if (percentText) percentText.innerText = "0% Completed";
+      if (prevLabel) prevLabel.innerText = "---";
+      if (nextLabel) nextLabel.innerText = "Amritsar Jn (ASR)";
+    } else if (todayStart < tripStartDate) {
+      if (countdownWrap) countdownWrap.style.display = "none";
+      if (fill) fill.style.width = "0%";
+      if (train) train.style.left = "0%";
+      if (statusBox) statusBox.innerText = "Journey Pending";
+      if (statusTextMain) statusTextMain.innerText = "Journey Pending";
+      if (statusBadge) {
+        statusBadge.className = "auto-lock-badge bg-warning-subtle text-dark";
+        statusBadge.innerHTML = '<i class="bi bi-clock"></i> Upcoming';
+      }
+      if (prevLabel) prevLabel.innerText = "---";
+      if (nextLabel) nextLabel.innerText = "Amritsar Jn (ASR)";
+    } else {
+      if (countdownWrap) countdownWrap.style.display = "none";
+
+      const totalDist = 3597;
+      const currentDist = (pct / 100) * totalDist;
+      
+      let prevStn = null;
+      let nextStn = null;
+      
+      for (let i = 0; i < ThiruvananthapuramFullRoute.length; i++) {
+        if (ThiruvananthapuramFullRoute[i].dist <= currentDist) {
+          prevStn = ThiruvananthapuramFullRoute[i];
+        } else {
+          nextStn = ThiruvananthapuramFullRoute[i];
+          break;
+        }
+      }
+
+      if (prevLabel) {
+        prevLabel.innerText = prevStn ? `${prevStn.name} (${prevStn.code})` : "---";
+      }
+      if (nextLabel) {
+        nextLabel.innerText = nextStn ? `${nextStn.name} (${nextStn.code})` : "Journey End";
+      }
+
+      if (pct >= 100) {
+        if (statusBox) statusBox.innerText = "Arrived at Trivandrum North";
+        if (statusTextMain) statusTextMain.innerText = "Arrived at Trivandrum North";
+        if (statusBadge) {
+          statusBadge.className = "auto-lock-badge bg-success-subtle text-success";
+          statusBadge.innerHTML = '<i class="bi bi-check-circle"></i> Completed';
+        }
+        if (nextLabel) nextLabel.innerText = "Trivandrum North (TVCN)";
+      } else if (pct <= 0) {
+        if (statusBox) statusBox.innerText = "Waiting to Depart";
+        if (statusTextMain) statusTextMain.innerText = "Waiting to Depart";
+        if (statusBadge) {
+          statusBadge.className = "auto-lock-badge bg-primary-subtle text-primary";
+          statusBadge.innerHTML = '<i class="bi bi-train-front"></i> At Origin';
+        }
+      } else {
+        if (statusBox) statusBox.innerText = "En Route to Trivandrum North";
+        if (statusTextMain) statusTextMain.innerText = "En Route - " + (prevStn ? prevStn.name : "...");
+        if (statusBadge) {
+          statusBadge.className = "auto-lock-badge bg-danger-subtle text-danger";
+          statusBadge.innerHTML = '<i class="bi bi-geo-alt-fill"></i> Live Trip';
+        }
+      }
+    }
+  } catch (e) {
+    console.error("Error updating Thiruvananthapuram tracker:", e);
+  }
+}
+
+function getThiruvananthapuramSmartInitialDate() {
+  const now = new Date();
+  now.setHours(0, 0, 0, 0);
+  
+  const tripStartDate = new Date("2026-05-31T00:00:00");
+  const tripEndDate = new Date("2026-06-03T00:00:00");
+
+  if (now < tripStartDate) {
+    return "2026-05-31";
+  } else if (now > tripEndDate) {
+    return now.toISOString().split("T")[0];
   } else {
     return now.toISOString().split("T")[0];
   }
