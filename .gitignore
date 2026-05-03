@@ -1,0 +1,9 @@
+# Ignore OS files
+.DS_Store
+Thumbs.db
+
+# Ignore VS Code (optional)
+.vscode/
+
+# Ignore large PDF files that may exceed GitHub limits
+*.pdf

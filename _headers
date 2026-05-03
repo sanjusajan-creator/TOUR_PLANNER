@@ -1,0 +1,22 @@
+# Netlify Cache Headers Configuration
+# https://docs.netlify.com/routing/headers/
+
+# Cache static assets for long periods
+# HTML - no cache (check for updates)
+*.html
+  Cache-Control: no-cache
+
+# CSS, JS, Images - long cache (immutable with versioning)
+*.css
+  Cache-Control: max-age=31536000, immutable
+
+*.js
+  Cache-Control: max-age=31536000, immutable
+
+# Images - long cache
+*.{jpg,jpeg,png,webp,avif,gif,svg}
+  Cache-Control: max-age=31536000, immutable
+
+# PDFs - shorter cache (24 hours)
+*.pdf
+  Cache-Control: max-age=86400

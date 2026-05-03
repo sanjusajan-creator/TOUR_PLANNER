@@ -1,0 +1,4691 @@
+.text-sunset {
+  color: #ff6b35 !important;
+}
+
+.text-bright-orange {
+  color: #ff4500 !important;
+}
+
+.text-pale-salmon {
+  color: #ffb6c1 !important;
+}
+
+.text-golden-yellow {
+  color: #fbbf24 !important;
+}
+
+.text-electric-cyan {
+  color: #00f5ff !important;
+}
+
+.text-deep-teal {
+  color: #0d9488 !important;
+}
+
+.text-vibrant-purple {
+  color: #d946ef !important;
+}
+
+.text-royal-blue {
+  color: #4169e1 !important;
+}
+
+.text-golden-yellow {
+  color: #fbbf24 !important;
+}
+
+.text-teal {
+  color: #0d9488 !important;
+}
+
+.text-deep-aqua {
+  color: #06b6d4 !important;
+}
+
+.text-sky-blue {
+  color: #0ea5e9 !important;
+}
+
+.text-lavender {
+  color: #e0e7ff !important;
+}
+
+.text-orchid {
+  color: #d946ef !important;
+}
+
+.text-neon-mint {
+  color: #34d399 !important;
+}
+
+.text-coral {
+  color: #ff6b6b !important;
+}
+
+.text-terracotta {
+  color: #e2725b !important;
+}
+
+.text-soft-gold {
+  color: #d4a574 !important;
+}
+
+.text-mustard {
+  color: #e1ad01 !important;
+}
+
+.text-indigo {
+  color: #4c1d95 !important;
+}
+
+.text-navy {
+  color: #1e3a8a !important;
+}
+
+.text-emerald {
+  color: #065f46 !important;
+}
+
+.text-charcoal {
+  color: #1f2937 !important;
+}
+
+.text-slate {
+  color: #334155 !important;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.hotel-card {
+  max-width: 100%;
+}
+
+.hotel-track-btn {
+  width: 100%;
+}
+
+@media (min-width: 1200px) {
+  .hotel-card {
+    padding: 0.75rem !important;
+    gap: 1rem !important;
+  }
+  .hotel-card .ratio {
+    width: 550px !important;
+  }
+  .hotel-card .fs-4 {
+    font-size: 1.25rem !important;
+  }
+  .hotel-card strong {
+    font-size: 0.95rem !important;
+  }
+  .hotel-card .btn {
+    padding: 0.2rem 0.5rem !important;
+    font-size: 0.7rem !important;
+  }
+  .hotel-track-btn {
+    width: auto !important;
+    min-width: 70px;
+    text-align: center;
+  }
+}
+
+@media (min-width: 1200px) {
+  #day6 .container-fluid {
+    min-height: auto !important;
+  }
+  #day6 .py-4 {
+    padding-top: 1rem !important;
+    padding-bottom: 1rem !important;
+  }
+}
+
+@media (max-width: 1199px) {
+  .hotel-card .ratio {
+    width: 220px !important;
+  }
+}
+
+@media (max-width: 991px) {
+  .hotel-card {
+    width: 100%;
+    justify-content: flex-start;
+  }
+}
+
+@media (max-width: 576px) {
+  .hotel-card {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .hotel-card .ratio {
+    width: 100% !important;
+    max-width: 280px;
+  }
+}
+
+.carousel-item img {
+  width: 100% !important;
+  height: 100% !important;
+  aspect-ratio: 16/9;
+  object-fit: contain !important;
+  object-position: center;
+  display: block;
+  position: relative;
+  z-index: 2;
+}
+
+.carousel-item {
+  background-color: transparent;
+  overflow: hidden;
+  position: relative;
+}
+
+@media (max-width: 768px) {
+  .carousel-item img {
+    aspect-ratio: 4/3;
+  }
+}
+
+.carousel-control-prev:focus,
+.carousel-control-next:focus,
+.carousel-indicators button:focus {
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+/* Blurred background wrapper for all carousels */
+.blurred-bg-wrapper {
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.blurred-bg-wrapper::before {
+  content: "";
+  position: absolute;
+  top: -10%;
+  left: -10%;
+  right: -10%;
+  bottom: -10%;
+  background-image: var(--blur-bg-img);
+  background-size: cover;
+  background-position: center;
+  filter: blur(15px);
+  z-index: 0;
+  opacity: 0.8;
+  transform: translateZ(0);
+}
+
+/* Highly transparent Glassmorphism Effect */
+.dropdown-menu {
+  /* 0.2 means 20% white, 80% transparent */
+  background-color: rgba(255, 255, 255, 0.1) !important;
+  backdrop-filter: blur(12px) saturate(180%);
+  /* Blurs the image behind it */
+  -webkit-backdrop-filter: blur(12px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.3) !important;
+  border-radius: 12px;
+  padding: 10px;
+  /* Responsive Height: Prevents menu from going off-screen */
+  max-height: 250px;
+  overflow-y: auto;
+  text-align: center !important;
+}
+
+/* Make the text pop against the image */
+.dropdown-item {
+  color: #ffffff !important;
+  /* White text looks better on dark/busy images */
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+  /* Adds a tiny shadow to text for readability */
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+/* Hover effect for the transparent items */
+.dropdown-item:hover {
+  background-color: rgba(255, 255, 255, 0.3) !important;
+  border-radius: 8px;
+  transform: translateX(5px);
+}
+
+/* Style the scrollbar to be thin and clean */
+.dropdown-menu::-webkit-scrollbar {
+  width: 4px;
+}
+
+.dropdown-menu::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: 10px;
+}
+
+/* This only triggers on screens smaller than 768px (Tablets and Phones) */
+@media (max-width: 767.98px) {
+
+  /* 1. Make the dropdown menu background solid black */
+  .dropdown-menu {
+    background-color: rgba(255, 255, 255, 0.5);
+    border: none !important;
+    width: 100%;
+    /* Makes the menu match the button width on small screens */
+  }
+
+  /* 2. Make the text inside the menu white */
+  .dropdown-item {
+    color: black !important;
+    font-family: fantasy;
+    font-weight: bold;
+    align-items: center;
+
+    /* padding: 15px 20px !important; Larger touch area for fingers */
+    border-bottom: 1px solid #222;
+    /* Adds a subtle divider between dates */
+  }
+
+  /* 3. Change the color when a user touches a date */
+  .dropdown-item:hover,
+  .dropdown-item:active {
+    background-color: #333333 !important;
+    color: #00d2ff !important;
+    /* Optional: adds a nice blue highlight on touch */
+  }
+
+  /* 4. Fix for the 'Select Date' toggle button itself */
+  .btn-outline-light.dropdown-toggle {
+    background-color: #000000 !important;
+    color: white !important;
+    border-color: #444 !important;
+  }
+
+  /* Reduce nav-wrapper padding on mobile to save vertical space */
+  #nav-wrapper {
+    padding-top: 0.5rem !important;
+    padding-bottom: 0.5rem !important;
+  }
+}
+
+/* When active, fade in and slide up slightly */
+.page-active {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
+
+#topContent,
+[id^="day"] {
+  display: none;
+  opacity: 0;
+  transform: translateY(15px);
+  transition: opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1), transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Specific display rules to prevent layout breaking */
+#topContent.page-active {
+  display: flex !important;
+  flex-wrap: wrap;
+  /* Ensure stacking on mobile */
+}
+
+[id^="day"].page-active {
+  display: block !important;
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
+
+#days {
+  display: block !important;
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
+
+/* 1. Smooth Transitions for all Buttons */
+.btn {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  opacity: 1;
+}
+
+.btn:hover:not(.disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15) !important;
+}
+
+.btn:active:not(.disabled) {
+  transform: translateY(0);
+}
+
+/* 2. Specific transition for the Dropdown Toggle (the Select Date button) */
+#dropBtn {
+  transition:
+    background-color 0.4s ease,
+    color 0.4s ease,
+    border-color 0.4s ease,
+    box-shadow 0.3s ease !important;
+}
+
+/* 3. Smooth fade for the Dropdown Menu itself */
+.dropdown-menu {
+  display: block;
+  visibility: hidden;
+  opacity: 0;
+  transform: translateY(10px);
+  transition:
+    opacity 0.3s ease,
+    transform 0.3s ease,
+    visibility 0.3s;
+}
+
+.dropdown-menu.show {
+  visibility: visible;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* 4. Animation for the Prev/Next buttons when they appear */
+#prevCol .btn,
+.col-3 .btn {
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(5px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Train Card Styling */
+.train-card {
+  border-radius: 0;
+  background-color: #ffffff;
+  border: 1px solid #000 !important;
+}
+
+.train-card .badge {
+  background-color: #2c5e9e !important;
+  /* IRCTC Blue */
+  border-radius: 4px;
+}
+
+.days-indicator span {
+  letter-spacing: 4px;
+  border-bottom: 2px solid #2c5e9e;
+  /* Underline the days it runs */
+}
+
+.train-card .border-dark {
+  border-color: #000 !important;
+}
+
+/* Extra smooth touch for the "Runs Daily" text */
+.text-success {
+  color: #1b8a5a !important;
+}
+
+.days-head {
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  font-weight: bolder;
+}
+
+.border-top.border-dark {
+  border-top: 1px solid #000 !important;
+}
+
+#day1 p {
+  text-align: justify;
+  font-size: 120%;
+  margin: 5%;
+  font-family: cursive;
+  font-weight: 400;
+}
+
+.train-img {
+  width: 100%;
+  aspect-ratio: 16/9;
+  object-fit: contain !important;
+  image-rendering: -webkit-optimize-contrast;
+}
+
+/* Optional: Limit the total width of the carousel column for ultra-wide screens */
+#trainCarousel {
+  max-width: 550px;
+  margin: 0 auto;
+  /* Keeps it centered in its column */
+}
+
+/* This adds a buffer so the sticky nav doesn't cover your headings */
+#topContent,
+[id^="day"] {
+  scroll-margin-top: 90px;
+  padding-top: 20px;
+}
+
+#nav-wrapper {
+  transition: all 0.3s ease;
+  z-index: 1019;
+  background-color: white;
+  position: relative;
+  top: 0;
+}
+
+#nav-wrapper.sticky-top {
+  position: sticky;
+  top: 0;
+}
+
+body {
+  transition: padding-top 0.3s ease;
+}
+
+.first_page #nav-wrapper {
+  position: relative !important;
+  top: 0 !important;
+}
+
+/* 1. Small Screen (Mobile) - Force smaller text */
+@media (max-width: 767px) {
+  .train-name-resp {
+    font-size: 14px;
+    letter-spacing: -0.5px;
+    /* Tighter spacing to fit more on one line */
+  }
+
+  #first-pp {
+    font-size: 0.95rem !important;
+  }
+}
+
+/* 2. Medium/Large Screen (Desktop) - Original size */
+@media (min-width: 768px) {
+  .train-name-resp {
+    font-size: 1.25rem;
+    /* This matches fs-5 */
+  }
+
+  #first-pp {
+    font-size: 1.2rem !important;
+  }
+}
+
+.ratio-16x9 iframe {
+  border-bottom-left-radius: 4px;
+  border-bottom-right-radius: 4px;
+  touch-action: pan-x pan-y pinch-zoom;
+  pointer-events: auto;
+}
+
+/* Optional: add a slight hover effect to the map card */
+.card:hover {
+  transition: transform 0.2s ease-in-out;
+}
+
+/* Target the container of your map */
+.map-card-container {
+  transition: all 0.3s ease-in-out;
+  border: none;
+  /* Match your dark border */
+  overflow: hidden;
+}
+
+/* The Hover State */
+.map-card-container:hover {
+  transform: translateY(-5px);
+  /* Lifts the card up slightly */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2) !important;
+  border-color: #0d6efd;
+  /* Changes border to Blue on hover */
+}
+
+/* Optional: Make the "Select Route" header change color too */
+.map-card-container:hover .card-header {
+  background-color: #0d6efd !important;
+  transition: background-color 0.3s ease;
+}
+
+/* Base style for the track button */
+/* 1. Base State */
+.btn-track {
+  transition: all 0.3s ease !important;
+  transform: translateY(0);
+  display: inline-block;
+  /* Ensures transform works */
+}
+
+/* 2. Hover State - Forced */
+.btn-track:hover {
+  background-color: #002e5e !important;
+  /* Force a dark blue */
+  color: white !important;
+  transform: translateY(-4px) !important;
+  /* Force the lift */
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3) !important;
+}
+
+/* 3. Mobile Touch Fix */
+@media (max-width: 768px) {
+  .btn-track:active {
+    transform: scale(0.95);
+    /* Shrinks slightly when tapped on phone */
+  }
+}
+
+.home-toast {
+  visibility: hidden;
+  min-width: 250px;
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  border-radius: 8px;
+  padding: 12px;
+  position: fixed;
+  z-index: 9999;
+  left: 50%;
+  bottom: 30px;
+  transform: translateX(-50%);
+  font-size: 14px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  opacity: 0;
+  transition:
+    opacity 0.5s,
+    bottom 0.5s;
+}
+
+.home-toast.show {
+  visibility: visible;
+  opacity: 1;
+  bottom: 50px;
+  /* Moves up slightly when appearing */
+}
+
+.pdf-card {
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.pdf-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15) !important;
+  border-color: #dc3545 !important;
+  /* Changes border to red on hover */
+}
+
+.route-container {
+  position: relative;
+  height: 10px;
+  margin: 50px 10px 20px 10px;
+}
+
+.route-line {
+  position: absolute;
+  width: 100%;
+  height: 6px;
+  background: #e9ecef;
+  border-radius: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.route-progress {
+  position: absolute;
+  width: 0%;
+  /* Animated via JS */
+  height: 6px;
+  background: #0d6efd;
+  border-radius: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: width 2.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* The Train Icon */
+.route-progress::after {
+  content: "\F5CB";
+  /* Bootstrap Train Icon */
+  font-family: "bootstrap-icons";
+  position: absolute;
+  right: -12px;
+  top: -30px;
+  font-size: 1.6rem;
+  color: #0d6efd;
+  filter: drop-shadow(0 2px 2px rgba(0, 0, 0, 0.2));
+}
+
+.station-point {
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  background: white;
+  border: 2px solid #212529;
+  border-radius: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+}
+
+.station-point::after {
+  content: attr(data-name);
+  position: absolute;
+  top: 18px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 0.65rem;
+  font-weight: bold;
+  color: #6c757d;
+  white-space: nowrap;
+}
+
+.blink {
+  animation: blinker 1.5s linear infinite;
+}
+
+@keyframes blinker {
+  50% {
+    opacity: 0;
+  }
+}
+
+/* Premium Modal Styling */
+#ticketModal .modal-content {
+  animation: modalSlideUp 0.4s ease-out;
+}
+
+@keyframes modalSlideUp {
+  from {
+    transform: translateY(50px);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Blur the background when modal is open */
+.modal-backdrop.show {
+  backdrop-filter: blur(8px);
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+/* Custom Scrollbar for the PDF container if needed */
+#pdfFrame::-webkit-scrollbar {
+  width: 8px;
+}
+
+#pdfFrame::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 10px;
+}
+
+/* Style for the trigger cards in the Ticket Section */
+.pdf-card {
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.pdf-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1) !important;
+  border-color: #0dcaf0;
+}
+
+.tracking-card {
+  font-family: "Inter", sans-serif;
+}
+
+/* Live Indicator */
+.live-indicator {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 4px 12px;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.pulse-dot {
+  height: 8px;
+  width: 8px;
+  background: #ff4d4d;
+  border-radius: 50%;
+  margin-right: 8px;
+  animation: pulse-red 1.5s infinite;
+}
+
+/* Status Hero */
+.icon-box-main {
+  width: 70px;
+  height: 70px;
+  background: #fff5f5;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  font-size: 2rem;
+  box-shadow: 0 10px 20px rgba(220, 53, 69, 0.1);
+}
+
+.progress-text-pill {
+  display: inline-block;
+  padding: 4px 15px;
+  background: #f8f9fa;
+  border-radius: 50px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #6c757d;
+}
+
+/* The Track */
+.track-wrapper {
+  padding: 20px 10px 40px 10px;
+}
+
+.main-track {
+  height: 8px;
+  background: #eef0f2;
+  border-radius: 10px;
+  position: relative;
+}
+
+.track-progress-fill {
+  height: 100%;
+  width: 0;
+  background: linear-gradient(90deg, #212529, #dc3545);
+  border-radius: 10px;
+  transition: width 1.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Station Markers */
+.stn-marker {
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.stn-dot {
+  width: 6px;
+  height: 6px;
+  background: #ced4da;
+  border-radius: 50%;
+  margin-bottom: 25px;
+  /* Space for labels */
+  transition: all 0.3s;
+}
+
+.stn-code {
+  position: absolute;
+  top: 15px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 0.6rem;
+  font-weight: 800;
+  color: #adb5bd;
+}
+
+.stn-marker.passed .stn-dot {
+  background: #dc3545;
+  box-shadow: 0 0 8px rgba(220, 53, 69, 0.5);
+}
+
+.stn-marker.passed .stn-code {
+  color: #dc3545;
+}
+
+/* Train Loco */
+.train-loco {
+  position: absolute;
+  top: -22px;
+  transform: translateX(-50%);
+  color: #dc3545;
+  text-align: center;
+  z-index: 10;
+  transition: left 1.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.loco-label {
+  background: #dc3545;
+  color: white;
+  font-size: 10px;
+  padding: 1px 5px;
+  border-radius: 4px;
+  margin-top: -5px;
+}
+
+/* Info Cards */
+.info-card {
+  padding: 15px;
+  border-radius: 18px;
+  background: #f8f9fa;
+  border: 1px solid #eee;
+}
+
+.info-card label {
+  display: block;
+  font-size: 0.6rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: #999;
+  margin-bottom: 4px;
+}
+
+.info-card strong {
+  display: block;
+  font-size: 0.9rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.info-card.active {
+  background: #fff5f5;
+  border-color: #ffe3e3;
+}
+
+@keyframes pulse-red {
+  0% {
+    box-shadow: 0 0 0 0 rgba(220, 53, 69, 0.4);
+  }
+
+  70% {
+    box-shadow: 0 0 0 10px rgba(220, 53, 69, 0);
+  }
+
+  100% {
+    box-shadow: 0 0 0 0 rgba(220, 53, 69, 0);
+  }
+}
+
+/* Fix for overlapping abbreviations */
+.stn-marker {
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.stn-dot {
+  width: 6px;
+  height: 6px;
+  background: #ced4da;
+  border-radius: 50%;
+  z-index: 2;
+}
+
+.stn-code {
+  position: absolute;
+  top: 18px;
+  /* Space below the dot */
+  left: 50%;
+  /* Rotate -45 degrees to prevent touching */
+  transform: translateX(-50%) rotate(-45deg);
+  transform-origin: top center;
+  font-size: 0.6rem;
+  font-weight: 800;
+  color: #adb5bd;
+  white-space: nowrap;
+  transition: all 0.3s ease;
+}
+
+/* Mobile congestion fix for train tracker stations - smaller labels */
+@media (max-width: 600px) {
+  .stn-marker .stn-code {
+    font-size: 0.45rem !important;
+    margin-top: 3px !important;
+  }
+
+  .stn-dot {
+    width: 5px !important;
+    height: 5px !important;
+    margin-bottom: 18px !important;
+  }
+}
+
+/* Day 5 Sainik Tracker - Mobile station label congestion fix - smaller labels */
+@media (max-width: 600px) {
+  #sainik-stations-container>div>div:last-child {
+    font-size: 6px !important;
+    margin-top: 3px !important;
+  }
+
+  #sainik-stations-container>div>div:first-child {
+    width: 5px !important;
+    height: 5px !important;
+  }
+
+  #day5 .track-wrapper {
+    padding: 40px 10px 60px 10px !important;
+  }
+}
+
+/* Make the track area taller to accommodate rotated text */
+.track-wrapper {
+  padding: 20px 10px 60px 10px;
+}
+
+.stn-marker.passed .stn-code {
+  color: #dc3545;
+}
+
+/* Premium Container */
+.premium-date-container {
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  border: 1px solid #f0f0f0;
+}
+
+.premium-label {
+  display: block;
+  font-size: 0.65rem;
+  font-weight: 800;
+  color: #95a5a6;
+  letter-spacing: 1.5px;
+  margin-bottom: 12px;
+  text-transform: uppercase;
+}
+
+/* Wrapper for Icon + Input + Button */
+.date-input-wrapper {
+  display: flex;
+  align-items: center;
+  position: relative;
+  background: #f8f9fa;
+  border-radius: 15px;
+  padding: 5px 10px;
+  transition: all 0.3s ease;
+  border: 1px solid #eee;
+}
+
+.date-input-wrapper:focus-within {
+  background: #fff;
+  border-color: #dc3545;
+  box-shadow: 0 0 0 4px rgba(220, 53, 69, 0.1);
+}
+
+.custom-calendar-icon {
+  color: #dc3545;
+  font-size: 1.1rem;
+  margin-left: 10px;
+}
+
+/* The actual Date Input */
+.premium-date-input {
+  border: none;
+  background: transparent;
+  color: #2c3e50;
+  font-weight: 700;
+  font-size: 0.95rem;
+  padding: 10px;
+  width: 100%;
+  outline: none;
+  cursor: pointer;
+}
+
+/* Style the native browser picker icon to be less intrusive */
+.premium-date-input::-webkit-calendar-picker-indicator {
+  cursor: pointer;
+  filter: invert(0.5);
+  opacity: 0.6;
+}
+
+/* Premium Today Button */
+.premium-today-btn {
+  background: #212529;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  padding: 8px 15px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+
+.premium-today-btn:hover {
+  background: #dc3545;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 10px rgba(220, 53, 69, 0.3);
+}
+
+.premium-date-container {
+  background: #ffffff;
+  padding: 18px;
+  border-radius: 22px;
+  border: 1px solid #edf2f7;
+}
+
+.premium-label {
+  display: block;
+  font-size: 0.6rem;
+  font-weight: 800;
+  color: #a0aec0;
+  letter-spacing: 1.2px;
+  margin-bottom: 10px;
+}
+
+.date-input-wrapper {
+  display: flex;
+  align-items: center;
+  background: #f7fafc;
+  border-radius: 12px;
+  padding: 8px 12px;
+  border: 1.5px solid #e2e8f0;
+}
+
+.premium-date-input {
+  border: none;
+  background: transparent;
+  color: #2d3748;
+  font-weight: 700;
+  font-size: 1rem;
+  width: 100%;
+  outline: none;
+  font-family: "Inter", sans-serif;
+}
+
+/* Customizing the Browser's Calendar Icon */
+.premium-date-input::-webkit-calendar-picker-indicator {
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');
+  opacity: 0.5;
+}
+
+.premium-today-btn {
+  background: #ffffff;
+  color: #dc3545;
+  border: 1px solid #dc3545;
+  border-radius: 8px;
+  padding: 6px 12px;
+  font-size: 0.7rem;
+  font-weight: 700;
+  white-space: nowrap;
+  transition: 0.2s;
+}
+
+.premium-today-btn:hover {
+  background: #dc3545;
+  color: #fff;
+}
+
+.date-input-wrapper {
+  display: flex;
+  align-items: center;
+  background: #f8f9fa;
+  border-radius: 15px;
+  padding: 12px 15px;
+  border: 1px solid #e0e0e0;
+  cursor: pointer;
+  position: relative;
+}
+
+/* This hides the mm/dd/yyyy text but keeps the logic */
+.hidden-date-input {
+  position: absolute;
+  opacity: 0;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  cursor: pointer;
+}
+
+/* Style for our custom Indian-format text */
+#formatted-date-display {
+  color: #2d3436;
+  font-size: 1rem;
+}
+
+.premium-today-btn {
+  position: relative;
+  z-index: 10;
+  /* Keeps button clickable over the hidden input */
+  background: #212529;
+  color: white;
+  border: none;
+  padding: 5px 12px;
+  border-radius: 8px;
+  font-size: 0.7rem;
+}
+
+.bg-light-primary {
+  background-color: rgba(13, 110, 253, 0.1);
+  padding: 10px;
+  border-radius: 50%;
+}
+
+.bg-light-info {
+  background-color: rgba(13, 202, 240, 0.1);
+  padding: 10px;
+  border-radius: 50%;
+}
+
+.ticket-aesthetic {
+  transition: transform 0.2s ease;
+  cursor: pointer;
+}
+
+.ticket-aesthetic:hover {
+  transform: translateY(-5px);
+}
+
+.stn-icon-circle {
+  width: 45px;
+  height: 45px;
+  background: #fff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  border: 1px solid #f0f0f0;
+}
+
+.pdf-card {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  border-radius: 20px !important;
+}
+
+.pdf-card:hover {
+  transform: translateY(-8px);
+  background-color: #ffffff;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1) !important;
+}
+
+.btn-xs {
+  padding: 0.25rem 0.5rem;
+  font-size: 0.75rem;
+}
+
+/* Container Styling */
+.calendar-card-premium {
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 24px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.04);
+  border: 1px solid #f0f0f0;
+}
+
+.premium-label-tag {
+  font-size: 0.65rem;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+  color: #adb5bd;
+}
+
+.auto-lock-badge {
+  font-size: 0.6rem;
+  background: #fff5f5;
+  color: #dc3545;
+  padding: 4px 10px;
+  border-radius: 50px;
+  font-weight: 700;
+}
+
+/* The Clickable Selector Box */
+.custom-date-selector {
+  display: flex;
+  align-items: center;
+  background: #f8f9fa;
+  padding: 12px;
+  border-radius: 18px;
+  position: relative;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: 1px solid transparent;
+}
+
+.custom-date-selector:hover {
+  background: #ffffff;
+  border-color: #dee2e6;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+/* Icon Hexagon style */
+.date-icon-hex {
+  width: 45px;
+  height: 45px;
+  background: linear-gradient(135deg, #212529, #343a40);
+  color: white;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  margin-right: 15px;
+}
+
+.date-text-group {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.date-main-text {
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: #212529;
+}
+
+.date-sub-text {
+  font-size: 0.7rem;
+  color: #6c757d;
+  font-weight: 500;
+}
+
+/* The Hidden Input Trick */
+.hidden-input-logic {
+  position: absolute;
+  opacity: 0;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  cursor: pointer;
+}
+
+/* Minimalist Today Button */
+.btn-today-minimal {
+  position: relative;
+  z-index: 5;
+  border: none;
+  background: white;
+  color: #212529;
+  font-weight: 700;
+  font-size: 0.7rem;
+  padding: 8px 14px;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: 0.2s;
+}
+
+.btn-today-minimal:hover {
+  background: #dc3545;
+  color: white;
+}
+
+/* Countdown Glass Effect */
+.countdown-glass-timer {
+  background: rgba(220, 53, 69, 0.04);
+  border: 1px dashed rgba(220, 53, 69, 0.2);
+  padding: 10px;
+  border-radius: 15px;
+  font-size: 0.8rem;
+  color: #dc3545;
+}
+
+.object-fit-cover {
+  object-fit: cover;
+}
+
+.location-wrapper {
+  transition: transform 0.3s ease;
+}
+
+.location-wrapper:hover {
+  transform: translateY(-5px);
+}
+
+.carousel-item img {
+  transition: transform 0.5s ease;
+}
+
+/* On mobile, make the columns stack neatly */
+@media (max-width: 768px) {
+  .carousel-item img {
+    min-height: 300px !important;
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.8s ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.object-fit-cover {
+  object-fit: cover;
+}
+
+/* Ensure the two columns have equal height on desktop */
+.gradient-food-1 {
+    background: linear-gradient(135deg, #fff7ed 0%, #ffedd5 100%) !important;
+    color: #78350f !important;
+}
+
+.gradient-food-2 {
+    background: linear-gradient(135deg, #ecfdf5 0%, #d1fae5 100%) !important;
+    color: #065f46 !important;
+}
+
+.food-icon-placeholder {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    min-height: 250px;
+    font-size: 5rem;
+    color: #fff;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+}
+
+
+@media (min-width: 768px) {
+  .col-md-6.d-flex.flex-column {
+    height: 100%;
+  }
+}
+
+/* Smooth transition for the map */
+.flex-grow-1 {
+  transition: all 0.3s ease-in-out;
+}
+
+.flex-grow-1:hover {
+  border-color: #dc3545 !important;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1) !important;
+}
+
+.hover-scale-sm {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.hover-scale-sm:hover {
+  transform: translateY(-3px);
+  background-color: #212529 !important;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2) !important;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.5));
+  width: 2.5rem;
+  height: 2.5rem;
+}
+
+#hotelCarousel .carousel-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  /* Forces images to maintain column width */
+  display: block;
+}
+
+/* Optional: Make indicators more visible */
+.carousel-indicators button {
+  background-color: #fff;
+  height: 3px;
+  border-radius: 10px;
+}
+
+/* Smooth Page Entry */
+body {
+  animation: fadeIn 1s;
+}
+
+/* Global Card Hover Effect */
+.card,
+.game-card-btn,
+.hover-scale-sm {
+  transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12) !important;
+}
+
+/* Carousel Image Smooth Zoom */
+.carousel-item img {
+  transition: transform 10s linear;
+  /* Slow zoom-in effect while viewing */
+}
+
+#tourCarousel .carousel-item.active img {
+  transform: scale(1.15);
+}
+
+/* Map Iframe Transition */
+.flex-grow-1 iframe {
+  transition: opacity 0.5s ease;
+}
+
+/* Navigation Pill (The Walking Card) Animation */
+.bg-dark.rounded-5 {
+  transition:
+    background-color 0.3s ease,
+    transform 0.3s ease;
+}
+
+.bg-dark.rounded-5:active {
+  transform: scale(0.96);
+  /* "Click" feel on mobile */
+}
+
+/* Custom Keyframe for page load */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+/* Initial State: Hidden and slightly shifted */
+.reveal-on-scroll {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  will-change: transform, opacity;
+}
+
+/* Active State: Triggered by JS */
+.reveal-on-scroll.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+  transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* Special transition for the Carousel Images (Smooth Cross-fade) */
+.carousel-fade .carousel-item {
+  transition-duration: 1s;
+  transition-property: opacity;
+}
+
+/* Hover effect for all cards to feel "High-End" */
+.card {
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease !important;
+}
+
+.card:hover {
+  transform: translateY(-10px) !important;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15) !important;
+}
+
+/* Unique Styles for Day 4 Tracker */
+#day-4-tracker .track-wrapper {
+  padding: 40px 0;
+  /* Extra space for the train icon */
+  position: relative;
+  width: 100%;
+}
+
+#day-4-tracker .main-track {
+  height: 12px;
+  width: 100%;
+  background-color: #e9ecef;
+  border-radius: 10px;
+  position: relative;
+  border: 1px solid #dee2e6;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+#marudhar-progress-fill {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  background: linear-gradient(90deg, #198754, #28a745);
+  border-radius: 10px;
+  width: 0%;
+  /* JS will update this */
+  transition: width 1s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 0 10px rgba(25, 135, 84, 0.3);
+}
+
+#marudhar-train-icon {
+  position: absolute;
+  top: -22px;
+  left: 0%;
+  /* JS will update this */
+  transform: translateX(-50%);
+  z-index: 5;
+  transition: left 1s cubic-bezier(0.4, 0, 0.2, 1);
+  text-align: center;
+}
+
+#marudhar-train-icon i {
+  font-size: 1.8rem;
+  color: #198754;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+}
+
+.loco-label-d4 {
+  background: #212529;
+  color: white;
+  font-size: 10px;
+  padding: 2px 6px;
+  border-radius: 4px;
+  display: block;
+  margin-top: -5px;
+  font-weight: bold;
+}
+
+/* FORCE VISIBILITY FOR DAY 4 TRACKER */
+#day4 .container.my-5 {
+  display: block !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+.marudhar-track-container {
+  background: #ffffff;
+  border: 1px solid #dee2e6;
+  border-radius: 20px;
+  padding: 25px;
+  margin-top: 20px;
+  min-height: 350px;
+  /* Forces the box to have height */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+#marudhar-progress-fill {
+  height: 100% !important;
+  background: #198754 !important;
+  display: block !important;
+}
+
+/* Responsive Track Wrapper */
+/* Responsive Track Container */
+.track-wrapper {
+  width: 100%;
+  max-width: 100%;
+  padding: 40px 0;
+  box-sizing: border-box;
+}
+
+.main-track {
+  width: 100% !important;
+  /* Force full width */
+  height: 10px;
+  background: #e9ecef;
+  border-radius: 10px;
+  position: relative;
+  margin: 0 auto;
+}
+
+/* Ensure train icon stays centered over its point */
+#marudhar-train-icon {
+  transform: translateX(-50%);
+  white-space: nowrap;
+}
+
+/* Station markers scaled by % */
+.stn-marker {
+  position: absolute;
+  transform: translateX(-50%);
+  text-align: center;
+}
+
+/* Make the train icon scale with the bar */
+.train-loco {
+  position: absolute;
+  transition: left 1s ease-in-out;
+  z-index: 10;
+  white-space: nowrap;
+}
+
+/* JAIPUR TIMELINE STYLING */
+.jaipur-plan-wrapper {
+  border-top: 1px dashed #dee2e6;
+}
+
+.timeline-jaipur {
+  position: relative;
+  padding-left: 20px;
+  margin-left: 15px;
+  border-left: 2px solid #f8f9fa;
+}
+
+.timeline-item-premium {
+  position: relative;
+  padding-bottom: 30px;
+  padding-left: 25px;
+}
+
+.timeline-item-premium::before {
+  content: "";
+  position: absolute;
+  left: -27px;
+  top: 5px;
+  width: 12px;
+  height: 12px;
+  background: #dc3545;
+  border-radius: 50%;
+  border: 3px solid #fff;
+  box-shadow: 0 0 0 3px #fff1f2;
+}
+
+.time-stamp-box {
+  font-size: 0.75rem;
+  font-weight: 800;
+  color: #dc3545;
+  background: #fff1f2;
+  padding: 2px 10px;
+  border-radius: 6px;
+  display: inline-block;
+  margin-bottom: 10px;
+}
+
+.timeline-content-card {
+  background: #fff;
+  padding: 15px;
+  border-radius: 18px;
+  transition: transform 0.3s ease;
+}
+
+.highlight-golden {
+  border-left: 4px solid #ffc107 !important;
+  background: linear-gradient(to right, #fffdf5, #fff);
+}
+
+.timeline-content-card:hover {
+  transform: translateX(5px);
+}
+
+/* PREMIUM APP UI */
+.jaipur-app-bg {
+  font-family:
+    "Inter",
+    -apple-system,
+    sans-serif;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.fw-black {
+  font-weight: 900;
+}
+
+.app-timeline {
+  position: relative;
+  padding-left: 20px;
+}
+
+/* Floating Glass Tiles */
+.glass-tile {
+  background: #ffffff;
+  border-radius: 24px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+  position: relative;
+  border: 1px solid #f1f3f5;
+  transition: all 0.3s ease;
+}
+
+.glass-tile:hover {
+  transform: scale(1.02);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+}
+
+.tile-time {
+  position: absolute;
+  left: -60px;
+  top: 20px;
+  font-weight: 800;
+  font-size: 0.75rem;
+  color: #adb5bd;
+}
+
+.tile-content {
+  padding: 20px;
+}
+
+/* Featured Tile Styling */
+.featured-tile {
+  overflow: hidden;
+}
+
+.featured-image {
+  position: relative;
+  height: 180px;
+  overflow: hidden;
+}
+
+.featured-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.exit-tag-luxe {
+  position: absolute;
+  bottom: 12px;
+  right: 12px;
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(5px);
+  padding: 5px 12px;
+  border-radius: 12px;
+  font-size: 0.7rem;
+  font-weight: 800;
+  color: #dc3545;
+}
+
+.sunset-overlay {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  background: linear-gradient(90deg, #ff8e53, #ff6b6b);
+  color: white;
+  padding: 4px 10px;
+  border-radius: 8px;
+  font-size: 0.65rem;
+  font-weight: 800;
+}
+
+/* Track Button (Using <a> tag for efficiency) */
+.btn-track-luxe {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 12px;
+  border-radius: 16px;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 0.8rem;
+  color: #212529;
+  background: #f8f9fa;
+  border: 1px solid #dee2e6;
+  transition: 0.2s;
+}
+
+.btn-track-luxe:hover {
+  background: #212529;
+  color: white !important;
+}
+
+/* Night Theme Tile */
+.night-tile {
+  background: #1a1d23;
+  border: none;
+}
+
+.btn-icon-map {
+  width: 40px;
+  height: 40px;
+  background: #fff1f2;
+  color: #dc3545;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+}
+
+.route-line-top {
+  height: 4px;
+  width: 40px;
+  background: #dc3545;
+  margin: 15px auto;
+  border-radius: 2px;
+}
+
+.x-small {
+  font-size: 0.75rem;
+}
+
+.border-4 {
+  border-top-width: 4px !important;
+}
+
+/* Clean up the scrollbar appearance for a better UI */
+.custom-scrollbar::-webkit-scrollbar {
+  height: 4px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+}
+
+/* Prevents horizontal lines from disappearing on very small screens */
+.flex-grow-1 {
+  min-width: 40px;
+}
+
+.animate-pulse {
+  animation: pulse-red 2s infinite;
+}
+
+@keyframes pulse-red {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(220, 53, 69, 0.7);
+  }
+
+  70% {
+    transform: scale(1.1);
+    box-shadow: 0 0 0 8px rgba(220, 53, 69, 0);
+  }
+
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(220, 53, 69, 0);
+  }
+}
+
+.vault-card {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 28px;
+  padding: 24px;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+}
+
+.vault-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  border-color: #3b82f6;
+}
+
+.pdf-card {
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.pdf-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1) !important;
+}
+
+.vault-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 15px;
+}
+
+.vault-avatar {
+  width: 48px;
+  height: 48px;
+  background: #eff6ff;
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.3rem;
+  color: #3b82f6;
+}
+
+/* Tag style */
+.document-tag {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f1f5f9;
+  padding: 4px 10px;
+  border-radius: 8px;
+  width: fit-content;
+  color: #64748b;
+  font-size: 0.7rem;
+  font-family: monospace;
+}
+
+.document-tag i {
+  color: #ef4444;
+  margin-right: 6px;
+}
+
+/* Button style */
+.btn-vault {
+  width: 100%;
+  background: #1e293b;
+  color: #ffffff;
+  border: none;
+  padding: 12px;
+  border-radius: 16px;
+  font-weight: 600;
+  font-size: 0.85rem;
+  transition: all 0.3s ease;
+  margin-top: 20px;
+}
+
+.btn-vault:hover {
+  background: #2563eb;
+}
+
+/* Dot Animation */
+.dot {
+  height: 8px;
+  width: 8px;
+  border-radius: 50%;
+  display: inline-block;
+  animation: blink 2s infinite;
+}
+
+@keyframes blink {
+
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0.4;
+  }
+}
+
+/* Custom Modal Size & Layers */
+.custom-modal-size {
+  max-width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.document-modal-content {
+  border-radius: 16px !important;
+  overflow: visible !important;
+  background: #fff;
+}
+
+.pdf-container-body {
+  background: #525659;
+  height: 70vh;
+  min-height: 350px;
+  max-height: 600px;
+  overflow: hidden;
+  /* Prevents the modal body itself from scrolling */
+}
+
+@media (max-width: 767.98px) {
+  .pdf-container-body {
+    height: 80vh;
+    max-height: none;
+  }
+}
+
+/* Hide Scrollbars for Chrome, Safari and Opera */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide Scrollbars for IE, Edge and Firefox */
+.no-scrollbar {
+  -ms-overflow-style: none;
+  /* IE and Edge */
+  scrollbar-width: none;
+  /* Firefox */
+}
+
+/* Style for the iframe to ensure it behaves */
+#pdfFrame {
+  overflow: hidden;
+}
+
+.text-xs {
+  font-size: 0.7rem !important;
+  padding: 5px 12px !important;
+}
+
+/* Stop Circle styling */
+.stop-number {
+  background: #0d6efd;
+  color: white;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 0.9rem;
+}
+
+/* Day Container Fade-In */
+.day-container {
+  animation: fadeIn 0.4s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+/* .carousel-item img {
+
+} */
+
+/* NEW NAVIGATION STEP-INDICATOR */
+.place-navigation {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+  gap: 10px;
+}
+
+.nav-line {
+  flex-grow: 1;
+  height: 2px;
+  background: repeating-linear-gradient(to right,
+      #ccc 0,
+      #ccc 5px,
+      transparent 5px,
+      transparent 10px);
+}
+
+.prev-place-tag {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #0d6efd;
+  font-weight: bold;
+}
+
+/* CARD ENHANCEMENTS */
+.timeline-card {
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+  border-radius: 20px !important;
+}
+
+.timeline-card:hover {
+  transform: translateY(-8px);
+}
+
+.timeline-img {
+  height: 240px;
+  object-fit: cover;
+}
+
+/* DAY 6 DESKTOP FIXES - Reduce size to prevent overlap */
+@media (min-width: 992px) {
+  #day6 .nav-route-container {
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    gap: 4px;
+    padding: 8px 4px;
+  }
+  #day6 .nav-route-container > div {
+    font-size: 0.65rem !important;
+    white-space: nowrap;
+  }
+  #day6 .nav-route-container .nav-line-solid {
+    flex: 0 0 35px;
+    min-width: 35px;
+    max-width: 80px;
+    height: 2px;
+    margin: 0 2px;
+  }
+  #day6 .nav-route-container .nav-line-solid .badge {
+    font-size: 0.5rem !important;
+    padding: 2px 4px !important;
+  }
+  #day6 .nav-route-container > span.badge {
+    font-size: 0.55rem !important;
+    padding: 3px 6px !important;
+  }
+  #day6 .card-body .rounded-4.p-4 {
+    padding: 0.75rem !important;
+  }
+  #day6 .card-body .rounded-4.p-4 p {
+    font-size: 0.85rem !important;
+    line-height: 1.3;
+  }
+  #day6 .card-body .rounded-4.p-4 .d-flex {
+    font-size: 0.7rem !important;
+  }
+  #day6 .card-body .rounded-4.p-4 .d-flex span:first-child {
+    font-size: 0.7rem !important;
+  }
+}
+
+@media (max-width: 991px) {
+  #day6 .nav-route-container {
+    flex-direction: column;
+    align-items: center;
+  }
+  #day6 .nav-route-container .nav-line-solid {
+    width: 2px;
+    height: 80px;
+    min-height: 80px;
+  }
+}
+
+/* DAY 7 JAMA MASJID NAVIGATION GUIDE - Colored Lines */
+@media (min-width: 992px) {
+  #day7 .nav-route-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 2px;
+    padding: 8px 4px;
+  }
+  #day7 .nav-route-container > div,
+  #day7 .nav-route-container > span {
+    font-size: 0.65rem !important;
+  }
+  #day7 .nav-route-container .nav-line-solid {
+    flex: 0 0 30px;
+    min-width: 30px;
+    max-width: 70px;
+    height: 3px;
+    margin: 0 2px;
+  }
+  #day7 .nav-route-container .nav-line-solid .badge {
+    font-size: 0.45rem !important;
+    padding: 2px 4px !important;
+  }
+}
+
+@media (max-width: 991px) {
+  #day7 .nav-route-container {
+    flex-direction: column;
+    align-items: center;
+  }
+  #day7 .nav-route-container .nav-line-solid {
+    width: 3px;
+    height: 20px;
+    min-height: 20px;
+  }
+}
+
+/* DAY 7 CARD HOVER EFFECTS */
+#day7 .card {
+  margin-bottom: 2.5rem;
+  padding: 1.5rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-radius: 1rem;
+}
+#day7 .card:hover {
+  transform: scale(1.02);
+  box-shadow: 0 1rem 3rem rgba(0,0,0,0.2) !important;
+}
+
+/* DAY 7 & DAY 8 IMAGE ROUNDED EDGES */
+#day7 .card img, #day8 .card img,
+#day7 .carousel-inner img, #day8 .carousel-inner img,
+#day7 .card-img-wrapper img, #day8 .card-img-wrapper img {
+  border-radius: 0.75rem;
+}
+
+#day7 .carousel, #day8 .carousel,
+#day7 .carousel-item, #day8 .carousel-item {
+  border-radius: 0.75rem;
+  overflow: hidden;
+}
+
+/* FOOD SECTION GRADIENT BACKGROUNDS */
+.food-gradient-1 {
+  background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%) !important;
+}
+
+.food-gradient-2 {
+  background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%) !important;
+}
+
+.food-gradient-3 {
+  background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 100%) !important;
+}
+
+/* FOOD CARD STRUCTURE */
+.food-card-row {
+  border-radius: 0.75rem;
+  overflow: hidden;
+}
+
+.food-card-row .col-lg-5:first-child {
+  border-top-left-radius: 0.75rem;
+  border-bottom-left-radius: 0.75rem;
+}
+
+/* FOOD SECTION BADGE POSITIONING - FIX OVERLAP */
+.card-premium-delhi > .day8-time-badge {
+  top: 0.75rem !important;
+  left: 0.75rem !important;
+}
+
+/* Ensure badge stays on top of carousel images */
+.card-premium-delhi {
+  overflow: visible;
+}
+
+.card-premium-delhi .carousel {
+  position: relative;
+  z-index: 1;
+}
+
+.card-premium-delhi .day8-time-badge {
+  z-index: 10 !important;
+}
+
+/* FOOD CARDS WITH IMAGES - RESTORED STYLE */
+.food-card-with-image .card-img-wrapper {
+  border-radius: 0.75rem;
+  overflow: hidden;
+}
+
+.food-card-with-image img {
+  border-radius: 0.75rem;
+}
+
+/* DAY 8 CARD STYLING */
+#day8 .card {
+  margin-bottom: 2.5rem;
+  padding: 1.5rem;
+  border-radius: 1rem;
+}
+#day8 .card:hover {
+  transform: scale(1.02);
+  box-shadow: 0 1rem 3rem rgba(0,0,0,0.2) !important;
+}
+
+/* DAY 7 & DAY 8 TIME BADGE STYLING */
+.day7-time-badge, .day8-time-badge {
+  padding: 0.5rem 1rem;
+  font-size: 0.85rem;
+  border-radius: 2rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+.day7-time-badge {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border: 2px solid #5a6fd6;
+}
+
+.day8-time-badge {
+  background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+  border: 2px solid #e84a6f;
+}
+
+/* DAY 7 & DAY 8 TRACK BUTTON STYLING */
+#day7 .nav-btn-premium, #day8 .nav-btn-premium {
+  border-radius: 2rem;
+  padding: 0.5rem 1.25rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+}
+
+#day7 .nav-btn-premium {
+  border: 2px solid #667eea;
+  background: linear-gradient(135deg, rgba(102,126,234,0.1) 0%, rgba(118,75,162,0.1) 100%);
+  color: #667eea;
+}
+
+#day7 .nav-btn-premium:hover {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(102,126,234,0.4);
+}
+
+#day8 .nav-btn-premium {
+  border: 2px solid #f5576c;
+  background: linear-gradient(135deg, rgba(245,87,108,0.1) 0%, rgba(240,147,251,0.1) 100%);
+  color: #f5576c;
+}
+
+#day8 .nav-btn-premium:hover {
+  background: linear-gradient(135deg, #f5576c 0%, #f093fb 100%);
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(245,87,108,0.4);
+}
+
+/* TRAVEL SECTION */
+.travel-divider {
+  padding: 20px 0;
+  text-align: center;
+  position: relative;
+}
+
+.travel-info {
+  background: #f8f9fa;
+  padding: 5px 15px;
+  border-radius: 50px;
+  font-size: 0.75rem;
+  border: 1px dashed #0d6efd;
+  color: #0d6efd;
+  display: inline-block;
+}
+
+/* Mobile margin for time badges on Day 7 and Day 8 */
+@media (max-width: 991px) {
+  .day7-time-badge, .day8-time-badge {
+    margin-top: 0.5rem;
+    margin-left: 0.5rem;
+  }
+}
+
+/* Navigation guide styles for Day 7 and Day 8 (desktop) */
+@media (min-width: 992px) {
+  #day7 .nav-route-container,
+  #day8 .nav-route-container {
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    gap: 4px;
+    padding: 8px 4px;
+  }
+  #day7 .nav-route-container > div,
+  #day8 .nav-route-container > div {
+    font-size: 0.65rem !important;
+    white-space: nowrap;
+  }
+  #day7 .nav-route-container .nav-line-solid,
+  #day8 .nav-route-container .nav-line-solid {
+    flex: 0 0 35px;
+    min-width: 35px;
+    max-width: 80px;
+    height: 2px;
+    margin: 0 2px;
+  }
+  #day7 .nav-route-container .nav-line-solid .badge,
+  #day8 .nav-route-container .nav-line-solid .badge {
+    font-size: 0.5rem !important;
+    padding: 2px 4px !important;
+  }
+  #day7 .nav-route-container > span.badge,
+  #day8 .nav-route-container > span.badge {
+    font-size: 0.55rem !important;
+    padding: 3px 6px !important;
+  }
+}
+
+/* Navigation guide styles for Day 7 and Day 8 (mobile) */
+@media (max-width: 991px) {
+  #day7 .nav-route-container,
+  #day8 .nav-route-container {
+    flex-direction: column;
+    align-items: center;
+  }
+  #day7 .nav-route-container .nav-line-solid,
+  #day8 .nav-route-container .nav-line-solid {
+    width: 2px;
+    height: 45px;
+    min-height: 45px;
+  }
+}
+
+/* Navigation Guide Animations */
+@keyframes pulse-red {
+  0% {
+    box-shadow: 0 0 0 0 rgba(220, 53, 69, 0.7);
+  }
+
+  70% {
+    box-shadow: 0 0 0 10px rgba(220, 53, 69, 0);
+  }
+
+  100% {
+    box-shadow: 0 0 0 0 rgba(220, 53, 69, 0);
+  }
+}
+
+.animate-pulse {
+  animation: pulse-red 2s infinite;
+}
+
+.border-dashed {
+  border-style: dashed !important;
+}
+
+/* Light Theme Card Styling */
+.timeline-card {
+  transition: all 0.3s ease;
+  border-radius: 20px !important;
+  background: #ffffff;
+  border: 1px solid #eee !important;
+}
+
+.timeline-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1) !important;
+}
+
+.timeline-img {
+  height: 250px;
+  object-fit: cover;
+}
+
+/* Travel Text Styling */
+.travel-divider {
+  text-align: center;
+  margin: 20px 0;
+  color: #888;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+/* Navigation Guide Specifics */
+.nav-option-box {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.nav-option-box a {
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.nav-option-box .btn-light {
+  background: #f8f9fa;
+  color: #495057;
+  border: 1px solid #dee2e6;
+}
+
+.nav-option-box .btn-light:hover {
+  background: #e9ecef;
+}
+
+.nav-option-box .btn-dark {
+  background: #212529;
+  color: white;
+}
+
+.nav-option-box .btn-dark:hover {
+  background: #343a40;
+}
+
+/* GAMES SECTION */
+.game-card {
+  position: relative;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+  display: block;
+}
+
+.game-card:hover {
+  transform: translateY(-5px) !important;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15) !important;
+}
+
+.game-card a {
+  display: block;
+  text-decoration: none;
+}
+
+.game-card a:hover + .game-shine,
+.game-card:hover .game-shine {
+  transform: translateX(100%);
+}
+
+.game-card .card-body {
+  z-index: 1;
+}
+
+.game-icon-bg {
+  width: 70px;
+  height: 70px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.game-icon-bg i {
+  font-size: 2rem;
+}
+
+.game-icon-uno {
+  background: rgba(255, 255, 255, 0.25);
+}
+
+.game-icon-2048 {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.game-number {
+  font-size: 1.5rem;
+  font-weight: 900;
+  color: white;
+  letter-spacing: -2px;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+  line-height: 70px;
+}
+
+.game-shine {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(120deg, transparent 30%, rgba(255, 255, 255, 0.15) 50%, transparent 70%);
+  transform: translateX(-100%);
+  transition: 0.5s;
+}
+
+/* Individual Game Card Gradients */
+.game-ludo {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.game-chess {
+  background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
+}
+
+.game-carrom {
+  background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+}
+
+.game-uno {
+  background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 100%);
+}
+
+.game-xox {
+  background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+}
+
+.game-bolt-sort {
+  background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
+}
+
+.game-2048 {
+  background: linear-gradient(135deg, #30cfd0 0%, #330867 100%);
+}
+
+.game-snake-ladder {
+  background: linear-gradient(135deg, #8e2de2 0%, #4a00e0 100%);
+}
+
+.game-flappy-bird {
+  background: linear-gradient(135deg, #f6d365 0%, #fda085 100%);
+}
+
+.nav-option-box:hover {
+  background: rgba(13, 110, 253, 0.08);
+}
+
+.divider-text {
+  font-size: 0.6rem;
+  font-weight: 800;
+  color: #6c757d;
+  background: #fff;
+  padding: 2px 8px;
+  border: 1px solid #dee2e6;
+  border-radius: 50px;
+  z-index: 5;
+}
+
+.animate-pulse {
+  animation: pulse-red 2s infinite;
+}
+
+@keyframes pulse-red {
+  0% {
+    box-shadow: 0 0 0 0 rgba(220, 53, 69, 0.7);
+  }
+
+  70% {
+    box-shadow: 0 0 0 10px rgba(220, 53, 69, 0);
+  }
+
+  100% {
+    box-shadow: 0 0 0 0 rgba(220, 53, 69, 0);
+  }
+}
+
+/* Floating Time Badge */
+.time-overlay {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  z-index: 10;
+  background: rgba(255, 193, 7, 0.95);
+  color: #000;
+  font-weight: 800;
+  padding: 5px 15px;
+  border-radius: 50px;
+  font-size: 0.75rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  border: 2px solid white;
+}
+
+/* Solid Navigation Lines */
+.nav-line-solid {
+  flex-grow: 1;
+  height: 3px;
+  background-color: #0d6efd;
+  position: relative;
+}
+
+/* Mobile Vertical Line */
+@media (max-width: 767px) {
+  .nav-line-solid,
+  #day6 .nav-line-solid,
+  #day7 .nav-line-solid {
+    width: 3px;
+    height: 50px;
+    flex-grow: 0;
+    margin: 8px 0;
+  }
+}
+
+.timeline-card {
+  transition: transform 0.3s ease;
+}
+
+.timeline-card:hover {
+  transform: translateY(-5px);
+}
+
+/* Scroll-In Animation */
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+  transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.entry-badge,
+.exit-badge {
+  position: absolute;
+  top: 15px;
+  z-index: 10;
+  padding: 6px 15px;
+  border-radius: 50px;
+  font-size: 0.7rem;
+  font-weight: 800;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  border: 2px solid white;
+  text-transform: uppercase;
+}
+
+.entry-badge {
+  left: 15px;
+  background: #198754;
+  /* Success Green */
+  color: white;
+}
+
+.exit-badge {
+  right: 15px;
+  background: #dc3545;
+  /* Danger Red */
+  color: white;
+}
+
+/* NAVIGATION ROUTE (Horizontal/Vertical) */
+.nav-route-container {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 8px 6px;
+  background: rgba(13, 110, 253, 0.04);
+  border: 1px solid rgba(13, 110, 253, 0.1);
+  border-radius: 12px;
+  gap: 3px;
+}
+
+.nav-route-container > div:not(.nav-line-solid) {
+  flex: 0 0 auto;
+}
+
+.nav-route-container .nav-line-solid {
+  flex-grow: 1;
+  min-width: 10px;
+}
+
+@media (min-width: 992px) {
+  .day6-route-desktop .nav-route-container {
+    justify-content: space-between;
+    padding: 12px 20px;
+    gap: 16px;
+  }
+  
+  .day6-route-desktop .nav-route-container .nav-line-solid {
+    min-width: 50px;
+    height: 2px;
+  }
+}
+
+.nav-route-container > div {
+  font-size: 0.55rem;
+  text-align: center;
+  flex-shrink: 0;
+}
+
+.nav-line-solid {
+  position: relative;
+  flex-grow: 1;
+  background-color: #0d6efd;
+  height: 1.5px;
+  min-width: 10px;
+  margin: 0 3px;
+  border-radius: 8px;
+}
+
+.nav-line-solid .badge {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 5;
+  white-space: nowrap;
+  border: 1.5px solid #ffffff !important;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  padding: 2px 5px;
+  font-size: 0.5rem;
+  font-weight: 700;
+}
+
+@media (min-width: 768px) {
+  #day6 #carousel-india-gate + .card-body,
+  #day6 #carousel-rashtrapati + .card-body {
+    padding: 1.35rem;
+    display: flex;
+    flex-direction: column;
+  }
+
+  #day6 #carousel-india-gate + .card-body > *,
+  #day6 #carousel-rashtrapati + .card-body > * {
+    margin-bottom: 0.95rem !important;
+  }
+
+  #day6 #carousel-india-gate + .card-body > p.text-muted.small,
+  #day6 #carousel-rashtrapati + .card-body > p.text-muted.small {
+    font-size: 0.88rem !important;
+    line-height: 1.45;
+  }
+
+  #day6 #carousel-india-gate + .card-body .india-gate-routes,
+  #day6 #carousel-rashtrapati + .card-body .rash-transport-routes {
+    padding: 1.15rem !important;
+    flex: 1 1 auto;
+  }
+
+  #day6 #carousel-india-gate + .card-body .india-gate-routes {
+    flex: 0 0 auto;
+    margin-bottom: 0.6rem !important;
+  }
+
+  #day6 .rash-transport-routes {
+    min-height: 340px;
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+  }
+
+  #day6 .india-gate-routes {
+    min-height: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+  }
+
+  #day6 #carousel-india-gate + .card-body .ratio,
+  #day6 #carousel-rashtrapati + .card-body .ratio {
+    --bs-aspect-ratio: 58%;
+    min-height: 220px;
+  }
+
+  #day6 #carousel-india-gate + .card-body .ratio {
+    margin-top: 0.7rem !important;
+  }
+
+  #day6 #carousel-india-gate,
+  #day6 #carousel-rashtrapati {
+    min-height: auto;
+  }
+
+  #day6 #carousel-india-gate .carousel-item img,
+  #day6 #carousel-rashtrapati .carousel-item img {
+    height: 230px !important;
+  }
+
+  #day6 #carousel-india-gate + .card-body .btn.btn-danger {
+    margin-top: 0;
+    margin-bottom: 0 !important;
+    padding-top: 0.7rem;
+    padding-bottom: 0.7rem;
+    font-size: 0.95rem;
+  }
+
+  #day6 #carousel-rashtrapati + .card-body .btn.btn-success {
+    margin-top: auto;
+    margin-bottom: 0 !important;
+    padding-top: 0.78rem;
+    padding-bottom: 0.78rem;
+    font-size: 1.06rem;
+  }
+
+  #day6 #carousel-rashtrapati + .card-body h5 {
+    font-size: 1.52rem;
+  }
+
+  #day6 #carousel-rashtrapati + .card-body > p.text-muted.small {
+    font-size: 1rem !important;
+    line-height: 1.5;
+  }
+
+  #day6 #carousel-rashtrapati + .card-body > .d-flex .badge {
+    font-size: 0.92rem !important;
+  }
+
+  #day6 .india-gate-routes .text-center.position-relative,
+  #day6 .rash-transport-routes .text-center.position-relative {
+    margin-top: 2rem !important;
+    margin-bottom: 2rem !important;
+  }
+
+  #day6 .india-gate-routes .text-center.position-relative {
+    margin-top: 1rem !important;
+    margin-bottom: 1rem !important;
+  }
+
+  #day6 .india-gate-routes .text-center.position-relative hr,
+  #day6 .rash-transport-routes .text-center.position-relative hr {
+    margin: 1.2rem 0 !important;
+  }
+
+  #day6 .india-gate-routes .text-center.position-relative hr {
+    margin: 0.7rem 0 !important;
+  }
+
+  #day6 .india-gate-routes .text-center.position-relative span.bg-white,
+  #day6 .rash-transport-routes .text-center.position-relative span.bg-white {
+    font-size: 0.86rem !important;
+    letter-spacing: 0.04em;
+    padding-left: 0.75rem !important;
+    padding-right: 0.75rem !important;
+  }
+
+  .rash-transport-routes .rash-primary-route {
+    padding: 10px 8px;
+    gap: 3px;
+    justify-content: flex-start;
+  }
+
+  .rash-transport-routes .rash-primary-row {
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    gap: 10px;
+    width: 100%;
+  }
+
+  .rash-transport-routes .rash-primary-route > div {
+    font-size: 0.82rem !important;
+    line-height: 1.2;
+    white-space: nowrap;
+  }
+
+  .rash-transport-routes .rash-primary-route .nav-line-solid {
+    flex: 1 1 86px;
+    min-width: 86px;
+    margin: 0 !important;
+    height: 2px;
+  }
+
+  .rash-transport-routes .rash-primary-route .nav-line-solid .badge {
+    font-size: 0.76rem !important;
+    padding: 5px 9px !important;
+  }
+
+  .rash-transport-routes small {
+    font-size: 0.9rem !important;
+  }
+
+  .rash-transport-routes .d-flex.justify-content-between.align-items-center.p-3.rounded.bg-light.border span:first-child {
+    font-size: 0.88rem !important;
+  }
+
+  .rash-transport-routes .d-flex.justify-content-between.align-items-center.p-3.rounded.bg-light.border span:last-child {
+    font-size: 1.04rem !important;
+  }
+
+  .india-gate-routes .nav-route-container {
+    overflow-x: hidden;
+    flex-wrap: wrap;
+    justify-content: center;
+    column-gap: 8px;
+    row-gap: 10px;
+    padding: 10px 8px;
+  }
+
+  .india-gate-routes .nav-route-container > div {
+    white-space: nowrap;
+    font-size: 0.82rem !important;
+    line-height: 1.2;
+  }
+
+  .india-gate-routes .nav-line-solid {
+    flex: 0 0 52px;
+    min-width: 52px !important;
+    margin: 0 !important;
+    height: 2px;
+  }
+
+  .india-gate-routes .nav-line-solid .badge {
+    font-size: 0.74rem !important;
+    padding: 5px 9px !important;
+  }
+
+  .india-gate-routes .nav-route-container > span.badge {
+    font-size: 0.74rem !important;
+    padding: 5px 9px !important;
+  }
+
+  .india-gate-routes small {
+    font-size: 0.88rem !important;
+  }
+
+  .india-gate-routes .route-mobile-only {
+    display: none;
+  }
+
+  .india-gate-routes .route-desktop-group {
+    background: rgba(13, 110, 253, 0.08);
+    border: 1px solid rgba(13, 110, 253, 0.14);
+    border-radius: 12px;
+    padding: 8px 10px;
+  }
+
+  .india-gate-routes .route-desktop-group .route-desktop-row {
+    background: transparent;
+    border: 0;
+    padding: 8px 0;
+  }
+
+  .india-gate-routes .route-desktop-group .route-desktop-row,
+  .india-gate-routes .nav-route-alt {
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    gap: 10px;
+  }
+
+  #day6 .india-gate-routes .nav-route-container,
+  #day6 .rash-transport-routes .nav-route-container {
+    width: 100%;
+  }
+
+  .india-gate-routes .route-desktop-group .route-desktop-row .nav-line-solid,
+  .india-gate-routes .nav-route-alt .nav-line-solid {
+    flex: 1 1 72px;
+    min-width: 72px !important;
+    max-width: 160px;
+  }
+
+  .india-gate-routes .nav-route-alt > span.badge {
+    margin-left: 8px !important;
+  }
+}
+
+/* MOBILE VIEW (Vertical Line) */
+@media (max-width: 767.98px) {
+  #day6 #carousel-rashtrapati + .card-body h5 {
+    font-size: 1.38rem;
+  }
+
+  #day6 #carousel-rashtrapati + .card-body > p.text-muted.small {
+    font-size: 1rem !important;
+    line-height: 1.45;
+  }
+
+  #day6 #carousel-rashtrapati + .card-body > .d-flex .badge {
+    font-size: 0.9rem !important;
+  }
+
+  #day6 #carousel-rashtrapati + .card-body .btn.btn-success {
+    font-size: 1.04rem;
+  }
+
+  .rash-transport-routes .rash-primary-route > div {
+    font-size: 0.96rem !important;
+    line-height: 1.25;
+  }
+
+  .rash-transport-routes .rash-primary-route .nav-line-solid {
+    width: 2px;
+    min-width: 2px;
+    height: 56px;
+    min-height: 56px;
+    margin: 16px 0;
+  }
+
+  .rash-transport-routes .rash-primary-route .nav-line-solid .badge {
+    font-size: 0.78rem !important;
+    padding: 7px 12px !important;
+  }
+
+   .rash-transport-routes .rash-primary-route {
+      gap: 8px;
+      flex-direction: column !important;
+      align-items: center !important;
+      justify-content: center !important;
+    }
+
+    .rash-transport-routes small {
+      font-size: 0.96rem !important;
+    }
+
+    .rash-transport-routes .d-flex.justify-content-between.align-items-center.p-3.rounded.bg-light.border span:first-child {
+      font-size: 0.96rem !important;
+    }
+
+    .rash-transport-routes .d-flex.justify-content-between.align-items-center.p-3.rounded.bg-light.border span:last-child {
+      font-size: 1.08rem !important;
+    }
+
+   /* DAY 6 MOBILE - Fix navigation routes vertical layout */
+   #day6 .india-gate-routes .route-mobile-only .nav-route-container,
+   #day6 .rash-transport-routes .route-mobile-only .nav-route-container {
+     flex-direction: column !important;
+     align-items: center !important;
+     justify-content: center !important;
+     gap: 0 !important;
+     padding: 12px 10px !important;
+   }
+
+   /* DAY 6 MOBILE - Center primary route items */
+   #day6 .rash-transport-routes .rash-primary-route > div {
+     text-align: center !important;
+     margin: 0 auto !important;
+   }
+
+   /* DAY 6 MOBILE - Fix connecting line thickness and height */
+   #day6 .india-gate-routes .route-mobile-only .nav-line-solid,
+   #day6 .rash-transport-routes .route-mobile-only .nav-line-solid {
+     width: 2px !important;
+     height: 20px !important;
+     min-height: 20px !important;
+     margin: 2px auto !important;
+     flex-grow: 0 !important;
+   }
+
+  /* DAY 6 MOBILE - Fix OR section spacing */
+  #day6 .india-gate-routes .text-center.position-relative,
+  #day6 .rash-transport-routes .text-center.position-relative {
+    margin: 12px 0 12px 0 !important;
+    padding: 8px 0 !important;
+  }
+
+    .nav-route-container {
+      flex-direction: column;
+      /* Stacks items vertically */
+      gap: 6px;
+      padding: 10px 8px;
+      white-space: normal;
+   }
+
+    .nav-route-container > div {
+      font-size: 0.85rem;
+      text-align: center;
+    }
+
+    .nav-line-solid,
+    #day6 .nav-line-solid,
+    #day7 .nav-line-solid {
+      width: 3px;
+      height: 50px;
+      min-height: 50px;
+      min-width: 3px;
+      flex-grow: 0;
+      margin: 8px 0;
+    }
+
+   .nav-line-solid .badge {
+     transform: translate(-50%, -50%) !important;
+     left: 50%;
+     top: 50%;
+     padding: 4px 9px;
+     font-size: 0.65rem;
+   }
+
+  .india-gate-routes .nav-line-solid {
+    width: 2px !important;
+    min-width: 2px !important;
+    margin: 12px 0 !important;
+  }
+
+   .india-gate-routes .nav-route-container > div {
+     font-size: 0.75rem !important;
+     line-height: 1.2;
+   }
+
+  .india-gate-routes .route-desktop-only {
+    display: none;
+  }
+
+  .india-gate-routes .route-mobile-only {
+    display: flex;
+  }
+
+   .india-gate-routes .nav-line-solid .badge {
+     font-size: 0.65rem !important;
+     padding: 4px 8px !important;
+   }
+
+  .india-gate-routes .nav-route-container > span.badge {
+    font-size: 0.88rem !important;
+    padding: 7px 12px !important;
+  }
+
+   .india-gate-routes small {
+     font-size: 0.75rem !important;
+   }
+}
+
+
+/* Global Object Fit */
+img,
+video {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  /* Change to 'contain' if you don't want cropping */
+  display: block;
+  /* Removes the small gap at the bottom of images */
+}
+
+/* Change the height here to reduce the visual size */
+.carousel-item {
+  height: 300px !important;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.zoom-img {
+  transition: transform 3.5s ease-in-out;
+  height: 300px !important;
+  /* This must match the carousel-item height */
+  width: 100%;
+  object-fit: cover;
+  /* This ensures the image still fills the 300px area neatly */
+}
+
+/* --- ANIMATIONS & INTERACTIVE POLISH --- */
+
+/* Reveal on Scroll (Hooks into script.js logic) */
+.reveal-on-scroll {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+    transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  will-change: opacity, transform;
+}
+
+.reveal-on-scroll.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+    transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* Card Hover Elevation */
+.card,
+.timeline-card {
+  transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.card:hover,
+.timeline-card:hover {
+  transform: translateY(-8px) scale(1.01);
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15) !important;
+}
+
+/* Smooth Button Ripple (Simplified) */
+.btn {
+  transition: all 0.2s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn:active {
+  transform: scale(0.95);
+}
+
+/* Image Slow-Load Softening */
+img {
+  transition: opacity 0.5s ease-in-out;
+}
+
+/* --- NAVIGATION DAY MODE --- */
+
+/* Applied to .navbar only on Day pages */
+.navbar.is-day-mode {
+  position: sticky !important;
+  top: 0;
+  z-index: 1030;
+}
+
+/* Applied to #nav-wrapper only on Day pages */
+.nav-wrapper-day-mode {
+  position: sticky !important;
+  /* This top value is set dynamically by JS based on Navbar height */
+  top: var(--nav-height, 56px);
+  z-index: 1020;
+  background-color: white;
+}
+
+/* MOBILE FIX: Ensures expanded menu pushes the wrapper down */
+.navbar-collapse {
+  background-color: inherit;
+}
+
+/* --- MODERN NAVBAR ENHANCEMENTS --- */
+.modern-nav {
+  position: relative;
+  z-index: 2000;
+  background: linear-gradient(135deg, #00c6ff 0%, #0072ff 100%) !important;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1) !important;
+  transition: all 0.3s ease;
+}
+
+.modern-nav .navbar-brand {
+  font-family: 'Outfit', sans-serif;
+  letter-spacing: 2px;
+  color: #ffffff !important;
+  font-weight: 800;
+  font-size: 1.7rem;
+  text-transform: uppercase;
+  text-shadow: 0 2px 15px rgba(0, 0, 0, 0.3);
+}
+
+.modern-nav .nav-link {
+  position: relative;
+  margin: 0 5px;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.8) !important;
+  transition: color 0.3s ease;
+}
+
+.modern-nav .nav-link:hover {
+  color: #fff !important;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+.modern-nav .navbar-toggler {
+  border: none;
+  padding: 0.5rem;
+}
+
+.modern-nav .navbar-toggler:focus {
+  box-shadow: none;
+}
+
+/* Day6 glass effect and animations */
+#day6 .card:not(.train-card) {
+  background: rgba(255,255,255,0.07);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255,255,255,0.2);
+  border-radius: 20px;
+  box-shadow: 0 8px 15px rgba(0,0,0,0.1);
+}
+#day6 .card:not(.train-card) .card-body {
+  background: rgba(255,255,255,0.04);
+}
+#day6 .card:not(.train-card) .btn-primary {
+  background-color: #FF6B35 !important;
+  border-color: #FF6B35 !important;
+}
+
+/* Day 6 Food & Dining Section */
+#day6 .container-fluid[style*="pb-4"] {
+  background: linear-gradient(135deg, rgba(255, 193, 7, 0.04) 0%, rgba(255, 152, 0, 0.04) 100%);
+  border-top: 2px solid rgba(255, 152, 0, 0.1);
+  border-bottom: 2px solid rgba(255, 152, 0, 0.1);
+}
+
+#day6 .container-fluid[style*="pb-4"] h3 {
+  color: #ff9800;
+  letter-spacing: 0.5px;
+  font-size: 1.75rem;
+}
+
+#day6 .container-fluid[style*="pb-4"] p {
+  color: #6c757d;
+  font-size: 0.95rem;
+}
+
+/* Food section cards with warm accents */
+#day6 .container-fluid[style*="pb-4"] .card {
+  border: 1px solid rgba(255, 152, 0, 0.15) !important;
+  background: rgba(255, 248, 240, 0.5) !important;
+}
+
+#day6 .container-fluid[style*="pb-4"] .card .card-body {
+  background: rgba(255, 250, 245, 0.3) !important;
+}
+
+/* Food badge styling */
+#day6 .container-fluid[style*="pb-4"] .badge-warning {
+  background-color: #ff9800 !important;
+  color: white !important;
+  font-weight: 600;
+}
+
+/* Food route styling */
+#day6 .container-fluid[style*="pb-4"] .india-gate-routes {
+  background: rgba(255, 193, 7, 0.08) !important;
+  border: 1px solid rgba(255, 152, 0, 0.2) !important;
+}
+
+/* Rashtrapati Bhavan Card - Complex Multi-Step Route Optimization */
+#day6 #carousel-rashtrapati + .card-body .route-desktop-row {
+  flex-wrap: wrap !important;
+  gap: 6px !important;
+}
+
+#day6 #carousel-rashtrapati + .card-body .route-desktop-row > div {
+  font-size: 0.6rem !important;
+  min-width: auto;
+  flex-shrink: 1;
+}
+
+#day6 #carousel-rashtrapati + .card-body .nav-line-solid {
+  flex: 0 1 50px !important;
+  max-width: 120px !important;
+  min-width: 50px !important;
+}
+
+#day6 #carousel-rashtrapati + .card-body .nav-line-solid .badge {
+  font-size: 0.48rem !important;
+  padding: 1px 4px !important;
+}
+
+/* Food Section Background */
+#day6 .food-section-bg {
+  background: linear-gradient(135deg, rgba(255, 193, 7, 0.06) 0%, rgba(255, 152, 0, 0.05) 100%);
+  border-top: 2px solid rgba(255, 152, 0, 0.15);
+  border-bottom: 2px solid rgba(255, 152, 0, 0.15);
+}
+
+/* Food Stop Cards - Compact Horizontal Layout */
+#day6 .food-stop-card {
+  background: rgba(255, 255, 255, 0.95) !important;
+  border: 1px solid rgba(255, 152, 0, 0.12) !important;
+  transition: all 0.3s ease;
+  height: 250px;
+}
+
+#day6 .food-stop-card:hover {
+  box-shadow: 0 8px 20px rgba(255, 152, 0, 0.15) !important;
+  transform: translateY(-2px);
+}
+
+#day6 .food-stop-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+#day6 .food-stop-card h5 {
+  color: #ff9800;
+  font-size: 1.1rem;
+}
+
+#day6 .food-stop-card .badge {
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+#day6 .food-stop-card .btn {
+  font-size: 0.8rem;
+  padding: 0.4rem 1rem;
+}
+
+/* Maps below cards */
+#day6 .food-section-bg iframe {
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Mobile - Stack properly */
+@media (max-width: 767px) {
+  #day6 .food-stop-card {
+    height: auto;
+  }
+  
+  #day6 .food-stop-card .row {
+    flex-direction: column;
+  }
+  
+  #day6 .food-stop-card .col-5,
+  #day6 .food-stop-card .col-7 {
+    width: 100% !important;
+  }
+  
+  #day6 .food-stop-card img {
+    min-height: 200px;
+  }
+}
+
+/* Premium Food Card - Rajiv Chowk */
+#day6 .food-stop-card-premium {
+  background: rgba(255, 255, 255, 0.98) !important;
+  border: 2px solid rgba(255, 152, 0, 0.2) !important;
+  border-radius: 1rem;
+  transition: all 0.4s ease;
+  overflow: hidden;
+  min-height: 300px;
+}
+
+#day6 .food-stop-card-premium:hover {
+  box-shadow: 0 12px 35px rgba(255, 152, 0, 0.25) !important;
+  transform: translateY(-4px);
+  border-color: rgba(255, 152, 0, 0.4) !important;
+}
+
+#day6 .food-stop-card-premium img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+#day6 .food-stop-card-premium:hover img {
+  transform: scale(1.05);
+}
+
+#day6 .food-stop-card-premium h4 {
+  color: #ff9800;
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+#day6 .food-stop-card-premium p {
+  color: #555;
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+#day6 .food-stop-card-premium .badge {
+  font-size: 0.85rem;
+  font-weight: 600;
+  padding: 0.6rem 1rem;
+  margin-right: 0.5rem;
+}
+
+#day6 .food-stop-card-premium .btn {
+  font-size: 0.95rem;
+  padding: 0.6rem 1.5rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+#day6 .food-stop-card-premium .btn:hover {
+  transform: translateX(2px);
+}
+
+#day6 .food-stop-card-premium iframe {
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Day6 Navigation Routes - Day5 Match Style */
+#day6 .col-md-6 > .card .rounded-4.p-3, 
+#day6 .col-md-6 > .card .rounded-4.p-4 {
+  padding: 12px !important;
+}
+
+#day6 .col-md-6 > .card .rounded-4.p-3.mb-4,
+#day6 .col-md-6 > .card .rounded-4.p-4.mb-4 {
+  margin-bottom: 12px !important;
+}
+
+#day6 .col-md-6 > .card .rounded-4.p-3.small,
+#day6 .col-md-6 > .card .rounded-4.p-4.small {
+  font-size: 0.7rem;
+}
+
+#day6 .card .rounded-4.p-4.border.bg-white.shadow-sm .nav-route-container {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 12px 10px;
+  background: rgba(13, 110, 253, 0.04);
+  border: 1px solid rgba(13, 110, 253, 0.1);
+  border-radius: 8px;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+#day6 .card .rounded-4.p-4.border.bg-white.shadow-sm .nav-route-container > div {
+  font-size: 0.75rem;
+  text-align: center;
+  flex-shrink: 0;
+  white-space: nowrap;
+}
+
+#day6 .card .rounded-4.p-4.border.bg-white.shadow-sm .nav-line-solid {
+  position: relative;
+  flex-grow: 1;
+  background-color: #0d6efd;
+  height: 2px;
+  min-width: 50px;
+  margin: 0 6px;
+  border-radius: 4px;
+}
+
+#day6 .card .rounded-4.p-4.border.bg-white.shadow-sm .nav-line-solid .badge {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 5;
+  white-space: nowrap;
+  border: 1px solid #ffffff !important;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  padding: 4px 8px;
+  font-size: 0.65rem;
+  font-weight: 600;
+}
+
+#day6 .card .rounded-4.p-4.border.bg-white.shadow-sm small {
+  font-size: 0.8rem !important;
+}
+
+#day6 .card .rounded-4.p-4.border.bg-white.shadow-sm .d-flex.justify-content-between {
+  padding: 10px 14px;
+  font-size: 0.8rem;
+}
+
+/* Day6 Nav Routes - Attraction Cards (narrow) always vertical */
+#day6 .attraction-card .rounded-4.p-4.border.bg-white.shadow-sm .nav-route-container {
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  padding: 10px 8px;
+}
+
+#day6 .attraction-card .rounded-4.p-4.border.bg-white.shadow-sm .nav-route-container > div {
+  font-size: 0.75rem;
+}
+
+#day6 .attraction-card .rounded-4.p-4.border.bg-white.shadow-sm .nav-line-solid {
+  width: 2px;
+  height: 28px;
+  min-height: 28px;
+  min-width: 2px;
+  flex-grow: 0;
+  margin: 5px auto;
+}
+
+#day6 .attraction-card .rounded-4.p-4.border.bg-white.shadow-sm .nav-line-solid .badge {
+  font-size: 0.65rem;
+  padding: 3px 8px;
+}
+
+/* Day6 Nav Routes - Mobile - compact sizing */
+@media (max-width: 767px) {
+  #day6 .card .rounded-4.p-4.border.bg-white.shadow-sm .nav-route-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    padding: 10px 8px;
+  }
+
+  #day6 .card .rounded-4.p-4.border.bg-white.shadow-sm .nav-route-container > div {
+    font-size: 0.75rem;
+  }
+
+  #day6 .card .rounded-4.p-4.border.bg-white.shadow-sm .nav-line-solid {
+    width: 2px;
+    height: 40px;
+    min-height: 40px;
+    min-width: 2px;
+    flex-grow: 0;
+    margin: 6px auto;
+  }
+
+  #day6 .card .rounded-4.p-4.border.bg-white.shadow-sm .nav-line-solid .badge {
+    font-size: 0.65rem;
+    padding: 3px 8px;
+  }
+
+  /* Fix Rashtrapati Bhavan mobile line thickness */
+  #day6 #carousel-rashtrapati + .card-body .nav-route-container .nav-line-solid {
+    width: 2px !important;
+    min-width: 2px !important;
+    max-width: 2px !important;
+    height: 25px !important;
+    min-height: 25px !important;
+  }
+  
+  #day6 .card .rounded-4.p-4.border.bg-white.shadow-sm .d-flex.justify-content-between {
+    padding: 6px 10px !important;
+    font-size: 0.65rem !important;
+  }
+}
+
+/* Attraction Cards - Lodhi, Safdarjung, Hauz Khas */
+#day6 .attraction-card .rounded-4.p-4.border.bg-white.shadow-sm .nav-line-solid {
+  width: 2px;
+  height: 35px;
+  min-height: 35px;
+  min-width: 2px;
+  flex-grow: 0;
+  margin: 6px auto;
+}
+
+#day6 .attraction-card:hover {
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12) !important;
+  transform: translateY(-3px);
+  border-color: rgba(0, 0, 0, 0.12) !important;
+}
+
+#day6 .attraction-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+#day6 .attraction-card:hover img {
+  transform: scale(1.03);
+}
+
+/* Carousel styling in attraction cards */
+#day6 .attraction-card .carousel {
+  background: transparent;
+  border-radius: 0;
+}
+
+#day6 .attraction-card .carousel-item {
+  height: 200px;
+  position: relative;
+  background-color: transparent;
+}
+
+#day6 .attraction-card .carousel-item img {
+  height: 200px;
+  object-fit: cover;
+  width: 100%;
+  position: relative;
+  z-index: 1;
+}
+
+#day6 .attraction-card .card-body {
+  flex: 1;
+  padding: 1.25rem;
+}
+
+#day6 .attraction-card h5 {
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+  color: #222;
+}
+
+#day6 .attraction-card p {
+  font-size: 0.95rem;
+  color: #666;
+  line-height: 1.5;
+  margin-bottom: 0.75rem;
+  min-height: 45px;
+}
+
+#day6 .attraction-card .badge {
+  font-size: 0.8rem;
+  font-weight: 600;
+  padding: 0.5rem 0.8rem;
+  margin-right: 0.4rem;
+  margin-bottom: 0.75rem;
+  display: inline-block;
+}
+
+#day6 .attraction-card .btn {
+  font-size: 0.85rem;
+  padding: 0.5rem 1rem;
+  align-self: flex-start;
+  margin-bottom: 0.75rem;
+}
+
+#day6 .attraction-card iframe {
+  width: 100%;
+  height: 120px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  margin-top: auto;
+  border: none;
+}
+
+/* Desktop - 3 Column Layout */
+@media (min-width: 992px) {
+  #day6 .food-stop-card-premium {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 800px;
+  }
+  
+  #day6 .attractions-grid .col-lg-4 {
+    padding: 0 1rem;
+  }
+}
+
+/* Tablet - 2 Column Layout */
+@media (min-width: 768px) and (max-width: 991px) {
+  #day6 .food-stop-card-premium {
+    min-height: 300px;
+  }
+  
+  #day6 .food-stop-card-premium h4 {
+    font-size: 1.5rem;
+  }
+}
+
+/* Mobile - Stack properly */
+@media (max-width: 767px) {
+  #day6 .food-stop-card-premium {
+    min-height: auto;
+    margin-bottom: 1.5rem;
+  }
+  
+  #day6 .food-stop-card-premium .row {
+    flex-direction: column;
+  }
+  
+  #day6 .food-stop-card-premium h4 {
+    font-size: 1.4rem;
+  }
+  
+  #day6 .attraction-card {
+    margin-bottom: 1rem;
+  }
+  
+  #day6 .attraction-card iframe {
+    height: 100px;
+  }
+}
+
+/* Day 6 desktop route guide cleanup (India Gate to Parliament cards) */
+#day6 .day6-route-box .day6-route-desktop,
+#day7 .day6-route-box .day6-route-desktop {
+  gap: 0.55rem;
+}
+
+#day6 .day6-route-box .day6-route-row,
+#day7 .day6-route-box .day6-route-row {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 10px;
+  border: 1px solid rgba(71, 85, 105, 0.24);
+  background: linear-gradient(90deg, #ffffff 0%, #f8fafc 100%);
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.08);
+}
+
+#day6 .day6-route-box .day6-route-row .day6-stop,
+#day7 .day6-route-box .day6-route-row .day6-stop {
+  flex: 0 0 auto;
+  padding: 4px 8px;
+  border-radius: 999px;
+  border: 1px solid rgba(33, 37, 41, 0.25);
+  background: #ffffff;
+  color: #212529;
+  font-size: 0.72rem;
+  font-weight: 700;
+  line-height: 1.2;
+  white-space: nowrap;
+}
+
+#day6 .day6-route-box .day6-route-row .day6-stop-final,
+#day7 .day6-route-box .day6-route-row .day6-stop-final {
+  border-color: #ffca2c;
+  color: #9a6700;
+  background: #fff3cd;
+}
+
+#day6 .day6-route-box .day6-route-row .day6-leg,
+#day7 .day6-route-box .day6-route-row .day6-leg {
+  flex: 1 1 0;
+  min-width: 0;
+  padding: 0;
+  border-radius: 0;
+  text-align: center;
+  font-size: 0.64rem;
+  font-weight: 700;
+  line-height: 1.15;
+  white-space: normal;
+  position: relative;
+  height: 3px;
+  overflow: visible;
+}
+
+#day6 .day6-route-box .day6-route-row .day6-leg,
+#day7 .day6-route-box .day6-route-row .day6-leg {
+  overflow-wrap: anywhere;
+  text-wrap: balance;
+}
+
+#day6 .day6-route-box .day6-route-row .day6-leg .day6-leg-label,
+#day7 .day6-route-box .day6-route-row .day6-leg .day6-leg-label {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  display: inline-block;
+  padding: 4px 8px;
+  border-radius: 999px;
+  border: 1px solid transparent;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.16);
+  white-space: nowrap;
+  max-width: min(240px, 92%);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  z-index: 100;
+  background: #ffffff;
+}
+
+#day7 .day6-route-box .day6-route-row {
+  position: relative;
+  overflow: hidden;
+}
+
+#day7 .day6-leg-walk {
+  background: #198754;
+}
+
+#day7 .day6-leg-walk .day6-leg-label {
+  color: #146c43;
+  border-color: #198754;
+}
+
+#day6 .day6-leg-metro,
+#day7 .day6-leg-metro {
+  background: #ffc107;
+}
+
+#day6 .day6-leg-bus,
+#day7 .day6-leg-bus {
+  background: #0dcaf0;
+}
+
+#day6 .day6-leg-turn,
+#day7 .day6-leg-turn {
+  background: #0d6efd;
+}
+
+#day7 .day6-leg-turn {
+  background: #20c997;
+}
+
+#day7 .day6-leg-turn .day6-leg-label {
+  color: #0f766e;
+  border-color: #20c997;
+}
+
+#day7 .day6-leg-metro.day6-leg-yellow {
+  background: #ffd700;
+}
+
+#day7 .day6-leg-metro.day6-leg-yellow .day6-leg-label {
+  color: #856404;
+  border-color: #ffd700;
+}
+
+#day7 .day6-leg-metro.day6-leg-violet {
+  background: #a855f7;
+}
+
+#day7 .day6-leg-metro.day6-leg-violet .day6-leg-label {
+  color: #6f42c1;
+  border-color: #a855f7;
+}
+
+#day7 .day6-leg-bus {
+  background: #fd7e14;
+}
+
+#day7 .day6-leg-bus .day6-leg-label {
+  color: #d46a08;
+  border-color: #fd7e14;
+  background: #ffffff;
+}
+
+#day7 .day6-route-box .day6-route-row .day6-leg .day6-leg-label {
+  z-index: 100;
+  background: #ffffff;
+}
+
+#day6 .day6-leg-walk .day6-leg-label,
+#day7 .day6-leg-walk .day6-leg-label {
+  background: #ffffff;
+  color: #212529;
+  border-color: #dee2e6;
+}
+
+#day6 .day6-leg-metro .day6-leg-label,
+#day7 .day6-leg-metro .day6-leg-label {
+  background: #ffc107;
+  color: #3d2f00;
+  border-color: #ffcd39;
+}
+
+#day6 .day6-leg-bus .day6-leg-label,
+#day7 .day6-leg-bus .day6-leg-label {
+  background: #ffffff;
+  color: #d46a08;
+  border-color: #fd7e14;
+}
+
+#day6 .day6-leg-turn .day6-leg-label,
+#day7 .day6-leg-turn .day6-leg-label {
+  background: #ffffff;
+  color: #212529;
+  border-color: #dee2e6;
+}
+
+@media (min-width: 992px) and (max-width: 1199.98px) {
+  #day6 .day6-route-box .day6-route-row .day6-leg .day6-leg-label,
+  #day7 .day6-route-box .day6-route-row .day6-leg .day6-leg-label {
+    font-size: 0.58rem;
+    padding: 3px 7px;
+    max-width: min(200px, 92%);
+  }
+}
+
+/* Rajiv Chowk section redesign */
+#day6 .food-stop-card-premium.rajiv-chowk-card {
+  max-width: 100% !important;
+}
+
+#day6 .rajiv-chowk-media {
+  height: 100%;
+  min-height: 320px;
+}
+
+#day6 .rajiv-chowk-map-panel {
+  background: rgba(255, 250, 245, 0.78);
+  border-left: 1px solid rgba(255, 152, 0, 0.2);
+}
+
+#day6 .rajiv-chowk-map-wrap {
+  min-height: 240px;
+}
+
+#day6 .rajiv-chowk-map-wrap iframe {
+  border-radius: 12px;
+}
+
+@media (max-width: 991.98px) {
+  #day6 .rajiv-chowk-map-panel {
+    border-left: 0;
+    border-top: 1px solid rgba(255, 152, 0, 0.2);
+  }
+
+  #day6 .rajiv-chowk-media {
+    min-height: 250px;
+  }
+
+  #day6 .rajiv-chowk-map-wrap {
+    min-height: 220px;
+  }
+}
+
+@media (max-width: 767.98px) {
+  #day6 .rajiv-chowk-media {
+    min-height: 220px;
+  }
+
+  #day6 .rajiv-chowk-map-wrap {
+    min-height: 180px;
+  }
+}
+
+/* Return section color emphasis only (Premium Gold + Teal) */
+#day6 .day6-end-cta {
+  position: relative;
+  border-radius: 22px;
+  padding: 1.35rem;
+  overflow: hidden;
+  background: linear-gradient(135deg, #fff8e7 0%, #ffe5b4 42%, #dcfce7 100%);
+  border: 1px solid rgba(13, 148, 136, 0.28);
+  box-shadow: 0 16px 36px -22px rgba(13, 148, 136, 0.42);
+}
+
+#day6 .day6-end-cta::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at 16% 20%, rgba(255, 255, 255, 0.86) 0%, rgba(255, 255, 255, 0) 52%),
+    radial-gradient(circle at 86% 78%, rgba(20, 184, 166, 0.2) 0%, rgba(20, 184, 166, 0) 56%);
+  pointer-events: none;
+}
+
+#day6 .day6-end-cta::after {
+  content: "";
+  position: absolute;
+  left: 14px;
+  right: 14px;
+  top: 10px;
+  height: 4px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #f59e0b 0%, #facc15 40%, #14b8a6 100%);
+  opacity: 0.9;
+  pointer-events: none;
+}
+
+#day6 .day6-end-cta > * {
+  position: relative;
+  z-index: 1;
+}
+
+#day6 .day6-end-cta-header {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+#day6 .day6-end-kicker {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.2rem;
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  border-radius: 999px;
+  padding: 0.34rem 0.68rem;
+  margin-bottom: 0.7rem;
+  color: #92400e;
+  border: 1px solid rgba(146, 64, 14, 0.26);
+  background: rgba(255, 255, 255, 0.86);
+}
+
+#day6 .day6-end-cta h4 {
+  color: #0f766e;
+  font-weight: 800;
+  letter-spacing: 0.01em;
+}
+
+#day6 .day6-end-cta p {
+  color: #475569;
+}
+
+#day6 .day6-end-actions {
+  display: flex;
+  gap: 0.7rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+#day6 .day6-end-track-btn,
+#day6 .day6-end-location-btn {
+  border-radius: 999px;
+  padding: 0.68rem 1.18rem;
+  font-weight: 700;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, background-color 0.25s ease;
+}
+
+#day6 .day6-end-track-btn {
+  color: #ffffff;
+  border: 0;
+  background: linear-gradient(135deg, #0d9488 0%, #059669 100%);
+  box-shadow: 0 14px 26px -16px rgba(5, 150, 105, 0.58);
+}
+
+#day6 .day6-end-track-btn:hover {
+  transform: translateY(-2px);
+  color: #ffffff;
+}
+
+#day6 .day6-end-location-btn {
+  color: #7c2d12;
+  border: 1px solid rgba(180, 83, 9, 0.3);
+  background: linear-gradient(135deg, #fff7ed 0%, #fde68a 100%);
+}
+
+#day6 .day6-end-location-btn:hover {
+  transform: translateY(-2px);
+  color: #7c2d12;
+  box-shadow: 0 14px 26px -18px rgba(180, 83, 9, 0.44);
+}
+
+#day6 .day6-end-note {
+  text-align: center;
+  margin-top: 0.8rem;
+  font-size: 0.8rem;
+  color: #475569;
+}
+
+@media (max-width: 576px) {
+  #day6 .day6-end-cta {
+    padding: 1.1rem;
+    border-radius: 18px;
+  }
+
+  #day6 .day6-end-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  #day6 .day6-end-track-btn,
+  #day6 .day6-end-location-btn {
+    width: 100%;
+  }
+}
+
+/* Entry/exit badge styling for carousel images */
+.carousel .badge-entry-left,
+.carousel .badge-exit-right {
+    position: absolute;
+    top: 12px;
+    z-index: 10;               /* ensures badge overlays the image */
+    font-size: clamp(0.75rem, 1.5vw, 1.1rem); /* responsive text size */
+    padding: clamp(0.3rem, 0.8vw, 0.45rem) clamp(0.5rem, 1vw, 0.8rem); /* responsive padding */
+    border-radius: 0.5rem;     /* rounded corners */
+}
+.carousel .badge-entry-left  { left: 10px; }
+.carousel .badge-exit-right  { right: 10px; }
+
+/* Day7 Unique Badge Styles - Red Fort */
+#day7 .day7-redfort-start {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    z-index: 10;
+    background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
+    color: white;
+    padding: 0.4rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    box-shadow: 0 4px 12px rgba(17, 153, 142, 0.4);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+#day7 .day7-redfort-end {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    z-index: 10;
+    background: linear-gradient(135deg, #0d9488 0%, #0ea5e9 100%);
+    color: white;
+    padding: 0.4rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    box-shadow: 0 4px 12px rgba(14, 165, 233, 0.4);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+/* Day7 Unique Badge Styles - Jama Masjid */
+#day7 .day7-jama-start {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    z-index: 10;
+    background: linear-gradient(135deg, #f7971e 0%, #ffd200 100%);
+    color: white;
+    padding: 0.4rem 0.8rem;
+    border-radius: 15px 25px 15px 25px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    box-shadow: 0 4px 12px rgba(247, 151, 30, 0.4);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+#day7 .day7-jama-end {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    z-index: 10;
+    background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+    color: white;
+    padding: 0.4rem 0.8rem;
+    border-radius: 25px 15px 25px 15px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    box-shadow: 0 4px 12px rgba(30, 60, 114, 0.4);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+/* Day7 Unique Badge Styles - Chandni Chowk */
+#day7 .day7-chandni-start {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    z-index: 10;
+    background: linear-gradient(135deg, #8B4513 0%, #D2691E 100%);
+    color: white;
+    padding: 0.4rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    box-shadow: 0 4px 12px rgba(139, 69, 19, 0.4);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+#day7 .day7-chandni-end {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    z-index: 10;
+    background: linear-gradient(135deg, #f9d423 0%, #ff4e50 100%);
+    color: white;
+    padding: 0.4rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    box-shadow: 0 4px 12px rgba(255, 78, 80, 0.4);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+/* Day7 Unique Badge Styles - Raj Ghat */
+#day7 .day7-rajghat-start {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    z-index: 10;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 0.4rem 0.8rem;
+    border-radius: 10px 20px 20px 10px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+#day7 .day7-rajghat-end {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    z-index: 10;
+    background: linear-gradient(135deg, #eb3349 0%, #f45c43 100%);
+    color: white;
+    padding: 0.4rem 0.8rem;
+    border-radius: 20px 10px 10px 20px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    box-shadow: 0 4px 12px rgba(235, 51, 73, 0.4);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+/* Day7 Unique Badge Styles - Humayun's Tomb */
+#day7 .day7-humayun-start {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    z-index: 10;
+    background: linear-gradient(135deg, #4e54c8 0%, #8f94fb 100%);
+    color: white;
+    padding: 0.4rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    box-shadow: 0 4px 12px rgba(78, 84, 200, 0.4);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+#day7 .day7-humayun-end {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    z-index: 10;
+    background: linear-gradient(135deg, #ec008c 0%, #fc6767 100%);
+    color: white;
+    padding: 0.4rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    box-shadow: 0 4px 12px rgba(236, 0, 140, 0.4);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+/* Day7 Unique Badge Styles - Lotus Temple */
+#day7 .day7-lotus-start {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    z-index: 10;
+    background: linear-gradient(135deg, #00b4db 0%, #0083b0 100%);
+    color: white;
+    padding: 0.4rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    box-shadow: 0 4px 12px rgba(0, 180, 219, 0.4);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+#day7 .day7-lotus-end {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    z-index: 10;
+    background: linear-gradient(135deg, #ff512f 0%, #f09819 100%);
+    color: white;
+    padding: 0.4rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    box-shadow: 0 4px 12px rgba(255, 81, 47, 0.4);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+#day7 .day7-redfort-start i,
+#day7 .day7-redfort-end i,
+#day7 .day7-jama-start i,
+#day7 .day7-jama-end i,
+#day7 .day7-chandni-start i,
+#day7 .day7-chandni-end i,
+#day7 .day7-rajghat-start i,
+#day7 .day7-rajghat-end i,
+#day7 .day7-humayun-start i,
+#day7 .day7-humayun-end i,
+#day7 .day7-lotus-start i,
+#day7 .day7-lotus-end i {
+    font-size: 0.7rem;
+}
+
+/* Mobile: Smaller badges */
+@media (max-width: 576px) {
+    #day7 .day7-redfort-start,
+    #day7 .day7-redfort-end,
+    #day7 .day7-jama-start,
+    #day7 .day7-jama-end,
+    #day7 .day7-chandni-start,
+    #day7 .day7-chandni-end,
+    #day7 .day7-rajghat-start,
+    #day7 .day7-rajghat-end,
+    #day7 .day7-humayun-start,
+    #day7 .day7-humayun-end,
+    #day7 .day7-lotus-start,
+    #day7 .day7-lotus-end {
+        top: 8px;
+        padding: 0.25rem 0.5rem;
+        font-size: 0.6rem;
+        border-width: 1px;
+    }
+    #day7 .day7-redfort-start { left: 8px; }
+    #day7 .day7-redfort-end { right: 8px; }
+    #day7 .day7-jama-start { left: 8px; }
+    #day7 .day7-jama-end { right: 8px; }
+    #day7 .day7-chandni-start { left: 8px; }
+    #day7 .day7-chandni-end { right: 8px; }
+    #day7 .day7-rajghat-start { left: 8px; }
+    #day7 .day7-rajghat-end { right: 8px; }
+    #day7 .day7-humayun-start { left: 8px; }
+    #day7 .day7-humayun-end { right: 8px; }
+    #day7 .day7-lotus-start { left: 8px; }
+    #day7 .day7-lotus-end { right: 8px; }
+    
+    #day7 .day7-redfort-start i,
+    #day7 .day7-redfort-end i,
+    #day7 .day7-jama-start i,
+    #day7 .day7-jama-end i,
+    #day7 .day7-chandni-start i,
+    #day7 .day7-chandni-end i,
+    #day7 .day7-rajghat-start i,
+    #day7 .day7-rajghat-end i,
+    #day7 .day7-humayun-start i,
+    #day7 .day7-humayun-end i,
+    #day7 .day7-lotus-start i,
+    #day7 .day7-lotus-end i {
+        font-size: 0.55rem;
+    }
+}
+
+/* Food section title styling */
+#day7 .food-title {
+    color: #c62828;
+    text-decoration: underline;
+    text-shadow: 0 1px 2px rgba(0,0,0,0.1);
+}
+
+/* Food section card styling */
+#day7 .food-card {
+    border: 2px solid #ff9800;
+    background-color: #fff8e1;
+    background: rgba(255,255,255,0.95) !important;
+    transition: all 0.3s ease;
+}
+#day7 .food-card:hover {
+    box-shadow: 0 8px 20px rgba(255,152,0,0.15) !important;
+    transform: translateY(-2px);
+}
+#day7 .food-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Day7 navigation button styling */
+#day7 .day7-nav-btn {
+    border-radius: 999px;
+    padding: 0.68rem 1.18rem;
+    font-weight: 700;
+    transition: transform 0.25s ease, box-shadow 0.25s ease, background-color 0.25s ease;
+    color: #ffffff;
+    border: 0;
+    background: linear-gradient(135deg, #0d9488 0%, #059669 100%);
+    box-shadow: 0 14px 26px -16px rgba(5,150,105,0.58);
+}
+#day7 .day7-nav-btn:hover {
+    transform: translateY(-2px);
+    color: #ffffff;
+}
+
+/* Transport Navigation Component (Day 7) */
+.transport-card { background: #fff; border-radius: 1rem; box-shadow: 0 2px 8px rgba(0,0,0,0.05); padding: 1rem; margin-bottom: 1rem; transition: transform .2s; }
+.transport-card:hover { transform: translateY(-2px); box-shadow:0 4px 12px rgba(0,0,0,0.1);}
+.route-header { font-weight:600; font-size:1.125rem; color:#1f2937; margin-bottom:0.75rem; }
+.route-pill { display:inline-flex; align-items:center; gap:0.25rem; padding:0.25rem 0.75rem; border-radius:9999px; font-size:0.75rem; font-weight:500; }
+.route-pill.walk { background:#dbeafe; color:#1d4ed8; }
+.route-pill.metro { background:#ede9fe; color:#8b5cf6; }
+.route-pill.bus { background:#dcfce7; color:#15803d; }
+.route-pill.interchange { background:#fef3c7; color:#d97706; }
+.route-pill.uber { background:#fef2f2; color:#dc2626; }
+.route-step { display:flex; align-items:center; gap:0.75rem; flex-wrap:wrap; margin-top:0.5rem; }
+.route-icon { width:1.5rem; height:1.5rem; display:flex; align-items:center; justify-content:center; border-radius:50%; flex-shrink:0; }
+.route-divider { width:2rem; height:2px; background:#e5e7eb; margin:0.5rem 0; }
+.alternate-section { margin-top:1rem; border-top:1px solid #e5e7eb; padding-top:0.75rem; }
+.alternate-label { font-size:0.75rem; font-weight:600; color:#6b7280; text-transform:uppercase; margin-bottom:0.5rem; }
+.uber-card { background:#fef2f2; border-radius:0.75rem; padding:0.75rem 1rem; display:flex; justify-content:space-between; align-items:center; margin-top:0.75rem; }
+.uber-card .price { font-weight:600; color:#dc2626; }
+.other-transport .route-pill { opacity:0.8; font-size:0.7rem; }
+@media (max-width:768px){
+    .route-step { flex-direction:column; align-items:flex-start; }
+    .route-divider { display:none; }
+    .route-pill { justify-content:center; width:100%; }
+    .uber-card { flex-direction:column; gap:0.5rem; text-align:center; }
+}
+
+ 
+ / *   D E L H I   P R E M I U M   U I   E N H A N C E M E N T S   * /  
+ . d e l h i - p r e m i u m - c o n t a i n e r   {  
+         b a c k g r o u n d :   # f d f d f d ;  
+         b o r d e r - r a d i u s :   3 0 p x ;  
+         p a d d i n g :   2 r e m   0 ;  
+ }  
+  
+ . p h a s e - g l a s s - h e a d e r   {  
+         b a c k g r o u n d :   r g b a ( 2 5 5 ,   2 5 5 ,   2 5 5 ,   0 . 8 ) ;  
+         b a c k d r o p - f i l t e r :   b l u r ( 1 0 p x ) ;  
+         b o r d e r :   1 p x   s o l i d   r g b a ( 2 2 4 ,   2 2 4 ,   2 2 4 ,   0 . 5 ) ;  
+         p a d d i n g :   1 . 5 r e m ;  
+         b o r d e r - r a d i u s :   2 0 p x ;  
+         m a r g i n - b o t t o m :   2 r e m ;  
+         b o x - s h a d o w :   0   8 p x   3 2 p x   r g b a ( 0 ,   0 ,   0 ,   0 . 0 5 ) ;  
+         p o s i t i o n :   s t i c k y ;  
+         t o p :   1 0 p x ;  
+         z - i n d e x :   1 0 ;  
+ }  
+  
+ . p h a s e - n u m b e r   {  
+         f o n t - s i z e :   0 . 8 r e m ;  
+         f o n t - w e i g h t :   8 0 0 ;  
+         t e x t - t r a n s f o r m :   u p p e r c a s e ;  
+         l e t t e r - s p a c i n g :   2 p x ;  
+         o p a c i t y :   0 . 6 ;  
+ }  
+  
+ . d e l h i - i t i n e r a r y - t i m e l i n e   {  
+         p o s i t i o n :   r e l a t i v e ;  
+         p a d d i n g - l e f t :   1 r e m ;  
+ }  
+  
+ . d e l h i - i t i n e r a r y - t i m e l i n e : : b e f o r e   {  
+         c o n t e n t :   ' ' ;  
+         p o s i t i o n :   a b s o l u t e ;  
+         l e f t :   0 ;  
+         t o p :   0 ;  
+         b o t t o m :   0 ;  
+         w i d t h :   2 p x ;  
+         b a c k g r o u n d :   l i n e a r - g r a d i e n t ( t o   b o t t o m ,   # d c 3 5 4 5 ,   # 0 d 6 e f d ,   # 1 9 8 7 5 4 ,   # 2 1 2 5 2 9 ) ;  
+         b o r d e r - r a d i u s :   1 0 p x ;  
+ }  
+  
+ . t i m e l i n e - p l a c e - i t e m   {  
+         p o s i t i o n :   r e l a t i v e ;  
+         p a d d i n g - b o t t o m :   3 r e m ;  
+         p a d d i n g - l e f t :   2 r e m ;  
+ }  
+  
+ . t i m e l i n e - p l a c e - i t e m : : b e f o r e   {  
+         c o n t e n t :   ' ' ;  
+         p o s i t i o n :   a b s o l u t e ;  
+         l e f t :   - 6 p x ;  
+         t o p :   1 5 p x ;  
+         w i d t h :   1 4 p x ;  
+         h e i g h t :   1 4 p x ;  
+         b a c k g r o u n d :   # f f f ;  
+         b o r d e r :   3 p x   s o l i d   # d c 3 5 4 5 ;  
+         b o r d e r - r a d i u s :   5 0 % ;  
+         z - i n d e x :   2 ;  
+         b o x - s h a d o w :   0   0   0   5 p x   r g b a ( 2 5 5 ,   2 5 5 ,   2 5 5 ,   0 . 8 ) ;  
+ }  
+  
+ . t i m e l i n e - p l a c e - i t e m . p h a s e - 2 : : b e f o r e   {   b o r d e r - c o l o r :   # 0 d 6 e f d ;   }  
+ . t i m e l i n e - p l a c e - i t e m . p h a s e - 3 : : b e f o r e   {   b o r d e r - c o l o r :   # 1 9 8 7 5 4 ;   }  
+ . t i m e l i n e - p l a c e - i t e m . p h a s e - 4 : : b e f o r e   {   b o r d e r - c o l o r :   # 2 1 2 5 2 9 ;   }  
+  
+ . c a r d - p r e m i u m - d e l h i   {  
+         b o r d e r - r a d i u s :   2 4 p x   ! i m p o r t a n t ;  
+         b o r d e r :   1 p x   s o l i d   r g b a ( 0 , 0 , 0 , 0 . 0 5 )   ! i m p o r t a n t ;  
+         t r a n s i t i o n :   a l l   0 . 4 s   c u b i c - b e z i e r ( 0 . 1 6 5 ,   0 . 8 4 ,   0 . 4 4 ,   1 ) ;  
+         b a c k g r o u n d :   # f f f ;  
+         o v e r f l o w :   h i d d e n ;  
+ }  
+  
+ . c a r d - p r e m i u m - d e l h i : h o v e r   {  
+         t r a n s f o r m :   t r a n s l a t e Y ( - 8 p x ) ;  
+         b o x - s h a d o w :   0   2 0 p x   4 0 p x   r g b a ( 0 , 0 , 0 , 0 . 1 )   ! i m p o r t a n t ;  
+ }  
+  
+ . t i m e - p i l l - p r e m i u m   {  
+         p o s i t i o n :   a b s o l u t e ;  
+         t o p :   2 0 p x ;  
+         r i g h t :   2 0 p x ;  
+         b a c k g r o u n d :   r g b a ( 2 5 5 ,   2 5 5 ,   2 5 5 ,   0 . 9 ) ;  
+         b a c k d r o p - f i l t e r :   b l u r ( 5 p x ) ;  
+         c o l o r :   # 1 a 1 a 1 a ;  
+         p a d d i n g :   6 p x   1 6 p x ;  
+         b o r d e r - r a d i u s :   1 0 0 p x ;  
+         f o n t - w e i g h t :   7 0 0 ;  
+         f o n t - s i z e :   0 . 8 5 r e m ;  
+         z - i n d e x :   5 ;  
+         b o x - s h a d o w :   0   4 p x   1 2 p x   r g b a ( 0 , 0 , 0 , 0 . 1 ) ;  
+         b o r d e r :   1 p x   s o l i d   r g b a ( 2 5 5 , 2 5 5 , 2 5 5 , 0 . 3 ) ;  
+ }  
+  
+ . d e l h i - c a r d - l a b e l   {  
+         d i s p l a y :   i n l i n e - b l o c k ;  
+         p a d d i n g :   4 p x   1 2 p x ;  
+         b o r d e r - r a d i u s :   8 p x ;  
+         f o n t - w e i g h t :   7 0 0 ;  
+         f o n t - s i z e :   0 . 6 5 r e m ;  
+         t e x t - t r a n s f o r m :   u p p e r c a s e ;  
+         l e t t e r - s p a c i n g :   1 p x ;  
+         m a r g i n - b o t t o m :   1 0 p x ;  
+ }  
+  
+ . l a b e l - h e r i t a g e   {   b a c k g r o u n d :   # f f f 5 f 5 ;   c o l o r :   # d c 3 5 4 5 ;   }  
+ . l a b e l - f o o d   {   b a c k g r o u n d :   # f f f 9 d b ;   c o l o r :   # f 5 9 f 0 0 ;   }  
+ . l a b e l - c u l t u r e   {   b a c k g r o u n d :   # e 7 f 5 f f ;   c o l o r :   # 1 c 7 e d 6 ;   }  
+  
+ . m o d e r n - c a r o u s e l   . c a r o u s e l - i t e m   i m g   {  
+         b o r d e r - r a d i u s :   0   0   2 4 p x   2 4 p x ;  
+         f i l t e r :   b r i g h t n e s s ( 0 . 9 5 ) ;  
+         t r a n s i t i o n :   a l l   0 . 5 s   e a s e ;  
+ }  
+  
+ . c a r d - p r e m i u m - d e l h i : h o v e r   . m o d e r n - c a r o u s e l   . c a r o u s e l - i t e m   i m g   {  
+         f i l t e r :   b r i g h t n e s s ( 1 . 0 5 ) ;  
+         t r a n s f o r m :   s c a l e ( 1 . 0 2 ) ;  
+ }  
+  
+ . r o u t e - b o x - p r e m i u m   {  
+         b a c k g r o u n d :   # f 8 f 9 f a ;  
+         b o r d e r - r a d i u s :   2 0 p x ;  
+         b o r d e r :   1 p x   s o l i d   # e e e ;  
+         p a d d i n g :   1 . 5 r e m ;  
+         m a r g i n :   1 . 5 r e m   0 ;  
+ }  
+  
+ . m a p - c o n t a i n e r - p r e m i u m   {  
+         b o r d e r - r a d i u s :   1 8 p x ;  
+         o v e r f l o w :   h i d d e n ;  
+         b o r d e r :   1 p x   s o l i d   # e e e ;  
+         b o x - s h a d o w :   i n s e t   0   2 p x   4 p x   r g b a ( 0 , 0 , 0 , 0 . 0 5 ) ;  
+ }  
+  
+ . n a v - b t n - p r e m i u m   {  
+         b a c k g r o u n d :   l i n e a r - g r a d i e n t ( 1 3 5 d e g ,   # 1 a 1 a 1 a   0 % ,   # 3 3 3   1 0 0 % ) ;  
+         c o l o r :   # f f f   ! i m p o r t a n t ;  
+         b o r d e r :   n o n e ;  
+         p a d d i n g :   1 2 p x   2 4 p x ;  
+         b o r d e r - r a d i u s :   1 6 p x ;  
+         f o n t - w e i g h t :   6 0 0 ;  
+         t r a n s i t i o n :   a l l   0 . 3 s   e a s e ;  
+         d i s p l a y :   f l e x ;  
+         a l i g n - i t e m s :   c e n t e r ;  
+         j u s t i f y - c o n t e n t :   c e n t e r ;  
+         g a p :   8 p x ;  
+ }  
+  
+ . n a v - b t n - p r e m i u m : h o v e r   {  
+         b a c k g r o u n d :   l i n e a r - g r a d i e n t ( 1 3 5 d e g ,   # 3 3 3   0 % ,   # 0 0 0   1 0 0 % ) ;  
+         t r a n s f o r m :   s c a l e ( 1 . 0 2 ) ;  
+         b o x - s h a d o w :   0   8 p x   2 0 p x   r g b a ( 0 , 0 , 0 , 0 . 1 5 ) ;  
+ }  
+ 
