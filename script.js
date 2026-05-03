@@ -1220,12 +1220,13 @@ document.addEventListener("DOMContentLoaded", function () {
   const ThiruvananthapuramInput = document.getElementById("thiruvananthapuram-date");
   if (ThiruvananthapuramInput) {
     ThiruvananthapuramInput.value = getThiruvananthapuramSmartInitialDate();
-    ThiruvananthapuramInput.value = "2026-05-31";
+    handleThiruvananthapuramDateChange(ThiruvananthapuramInput.value);
   }
   if (typeof initThiruvananthapuramTrack === "function") {
     initThiruvananthapuramTrack();
   }
   setTimeout(() => updateThiruvananthapuramTracker(), 100);
+  setInterval(updateThiruvananthapuramTracker, 60000);
 
   document.querySelectorAll('[data-action="update-thiruvananthapuram"]').forEach(el => {
     el.addEventListener("click", () => {
@@ -1236,17 +1237,13 @@ document.addEventListener("DOMContentLoaded", function () {
   document.querySelectorAll('[data-action="set-thiruvananthapuram-today"]').forEach(el => {
     el.addEventListener("click", (e) => {
       e.stopPropagation();
-      const input = document.getElementById("thiruvananthapuram-date");
-      if (input) {
-        input.value = getThiruvananthapuramSmartInitialDate();
-        updateThiruvananthapuramTracker();
-      }
+      setThiruvananthapuramToday();
     });
   });
 
   const ThiruvananthapuramDateInput = document.getElementById("thiruvananthapuram-date");
   if (ThiruvananthapuramDateInput) {
-    ThiruvananthapuramDateInput.addEventListener("change", () => updateThiruvananthapuramTracker());
+    ThiruvananthapuramDateInput.addEventListener("change", () => handleThiruvananthapuramDateChange(ThiruvananthapuramDateInput.value));
   }
 });
 
@@ -1459,32 +1456,52 @@ function initThiruvananthapuramTrack() {
   container.innerHTML = "";
 
   const totalDist = 3597;
+  const startMins = ThiruvananthapuramFullRoute[0].dist;
+  const endMins = ThiruvananthapuramFullRoute[ThiruvananthapuramFullRoute.length - 1].dist;
+  const totalRange = endMins - startMins;
   const isMobile = window.innerWidth <= 768;
-  const keyStations = new Set([0, 4, 8, 12, 16, 20, 24, 28, 29]);
+  const mobileKeyStations = new Set([0, 4, 6, 10, 13, 17, 20, 23, 28, 29]);
+  const keyStations = new Set([0, 4, 6, 8, 10, 13, 17, 20, 23, 26, 28, 29]);
+  const activeKeyStations = isMobile ? mobileKeyStations : keyStations;
 
-  ThiruvananthapuramFullRoute.forEach((stn, index) => {
-    const pos = (stn.dist / totalDist) * 100;
+  ThiruvananthapuramFullRoute.forEach((stn, i) => {
+    let position = ((stn.dist - startMins) / totalRange) * 100;
     const marker = document.createElement("div");
-    const isKey = keyStations.has(index);
-
-    marker.style.position = "absolute";
-    marker.style.left = pos + "%";
-    marker.style.top = "12px";
-    marker.style.transform = "translateX(-50%)";
-    marker.style.textAlign = "center";
+    const isKey = activeKeyStations.has(i);
+    
+    if (isMobile) {
+      if (i === 28) position = Math.max(0, position - 3);
+      if (i === 29) position = Math.min(100, position + 3);
+    }
+    
+    marker.className = "stn-marker";
+    marker.style.left = position + "%";
+    marker.id = `thiruvananthapuram-stn-${i}`;
+    marker.innerHTML = `<div class="stn-dot"></div><div class="stn-code">${stn.code}</div>`;
     
     if (isMobile && !isKey) {
       marker.style.visibility = "hidden";
       marker.style.opacity = "0";
     }
-    marker.className = "marudhar-stn-marker";
-
-    marker.innerHTML = `
-      <div style="background: ${isKey ? '#dc3545' : '#6c757d'}; color: white; font-size: 8px; padding: 1px 3px; border-radius: 2px; white-space: nowrap;">${stn.code}</div>
-      ${isKey ? `<div style="font-size: 7px; color: #333; margin-top: 2px; font-weight: bold;">${stn.name.substring(0, 8)}</div>` : ''}
-    `;
+    
     container.appendChild(marker);
   });
+}
+
+function calculateThiruvananthapuramMinutes(station) {
+  const timeParts = station.time.split(":");
+  const hours = parseInt(timeParts[0], 10);
+  const minutes = parseInt(timeParts[1], 10);
+  const depHours = 13;
+  const depMinutes = 10;
+  const depTotalMinutes = depHours * 60 + depMinutes;
+  const stationTotalMinutes = hours * 60 + minutes;
+  
+  if (station.day > 1) {
+    return (24 * 60 * (station.day - 1)) + stationTotalMinutes - depTotalMinutes;
+  } else {
+    return stationTotalMinutes - depTotalMinutes;
+  }
 }
 
 function updateThiruvananthapuramTracker() {
@@ -1518,39 +1535,46 @@ function updateThiruvananthapuramTracker() {
 
     const depTime = new Date(selectedDateValue + "T13:10:00");
     const totalJourneyMinutes = 2732;
-    const elapsed = Math.floor((now - depTime) / 60000);
 
-    let pct = (elapsed / totalJourneyMinutes) * 100;
-    pct = Math.max(0, Math.min(100, pct));
+    let elapsed = 0;
+    let pct = 0;
+    let prevStn = null;
+    let nextStn = null;
+
+    if (now >= depTime) {
+      elapsed = Math.floor((now - depTime) / 60000);
+      
+      ThiruvananthapuramFullRoute.forEach((stn) => {
+        const stationMinutes = calculateThiruvananthapuramMinutes(stn);
+        if (elapsed >= stationMinutes) {
+          prevStn = stn;
+        } else if (!nextStn) {
+          nextStn = stn;
+        }
+      });
+
+      if (prevStn) {
+        const totalDist = 3597;
+        const currentDist = prevStn.dist;
+        pct = (currentDist / totalDist) * 100;
+      }
+    }
 
     if (fill) fill.style.width = pct + "%";
     if (train) train.style.left = pct + "%";
     if (percentText) percentText.innerText = Math.floor(pct) + "% Completed";
 
-    if (todayStart < tripStartDate && selectedDateValue === "2026-05-31") {
-      const diffInMs = tripStartDate - todayStart;
-      const diffInDays = Math.round(diffInMs / (1000 * 60 * 60 * 24));
+    if (now < depTime) {
+      const diffMs = depTime - now;
+      const diffDays = Math.floor(diffMs / (1000 * 60 * 60 * 24));
+      const diffHrs = Math.floor((diffMs % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const diffMins = Math.floor((diffMs % (1000 * 60 * 60)) / (1000 * 60));
       if (countdownWrap) {
         countdownWrap.style.display = "block";
-        if (countdownText) countdownText.innerText = `${diffInDays} ${diffInDays === 1 ? "Day" : "Days"} to Departure`;
+        if (countdownText) countdownText.innerHTML = `<i class="bi bi-hourglass-split"></i> Departs in ${diffDays}d ${diffHrs}h ${diffMins}m`;
       }
-      if (statusBox) statusBox.innerText = "Journey Pending";
-      if (statusTextMain) statusTextMain.innerText = "Journey Pending";
-      if (statusBadge) {
-        statusBadge.className = "auto-lock-badge bg-warning-subtle text-dark";
-        statusBadge.innerHTML = '<i class="bi bi-clock"></i> Upcoming';
-      }
-      if (fill) fill.style.width = "0%";
-      if (train) train.style.left = "0%";
-      if (percentText) percentText.innerText = "0% Completed";
-      if (prevLabel) prevLabel.innerText = "---";
-      if (nextLabel) nextLabel.innerText = "Amritsar Jn (ASR)";
-    } else if (todayStart < tripStartDate) {
-      if (countdownWrap) countdownWrap.style.display = "none";
-      if (fill) fill.style.width = "0%";
-      if (train) train.style.left = "0%";
-      if (statusBox) statusBox.innerText = "Journey Pending";
-      if (statusTextMain) statusTextMain.innerText = "Journey Pending";
+      if (statusBox) statusBox.innerText = "Scheduled";
+      if (statusTextMain) statusTextMain.innerText = "Scheduled";
       if (statusBadge) {
         statusBadge.className = "auto-lock-badge bg-warning-subtle text-dark";
         statusBadge.innerHTML = '<i class="bi bi-clock"></i> Upcoming';
@@ -1560,27 +1584,21 @@ function updateThiruvananthapuramTracker() {
     } else {
       if (countdownWrap) countdownWrap.style.display = "none";
 
-      const totalDist = 3597;
-      const currentDist = (pct / 100) * totalDist;
-      
-      let prevStn = null;
-      let nextStn = null;
-      
-      for (let i = 0; i < ThiruvananthapuramFullRoute.length; i++) {
-        if (ThiruvananthapuramFullRoute[i].dist <= currentDist) {
-          prevStn = ThiruvananthapuramFullRoute[i];
-        } else {
-          nextStn = ThiruvananthapuramFullRoute[i];
-          break;
-        }
-      }
-
       if (prevLabel) {
         prevLabel.innerText = prevStn ? `${prevStn.name} (${prevStn.code})` : "---";
       }
       if (nextLabel) {
         nextLabel.innerText = nextStn ? `${nextStn.name} (${nextStn.code})` : "Journey End";
       }
+
+      ThiruvananthapuramFullRoute.forEach((s, i) => {
+        const m = document.getElementById(`thiruvananthapuram-stn-${i}`);
+        if (m) {
+          const stationMinutes = calculateThiruvananthapuramMinutes(s);
+          if (elapsed >= stationMinutes) m.classList.add("passed");
+          else m.classList.remove("passed");
+        }
+      });
 
       if (pct >= 100) {
         if (statusBox) statusBox.innerText = "Arrived at Trivandrum North";
@@ -1607,10 +1625,9 @@ function updateThiruvananthapuramTracker() {
       }
     }
     
-    // Toggle lock badge visibility
     const lockBadge = document.getElementById('thiruvananthapuram-lock-badge');
     if (lockBadge) {
-      if (todayStart < tripStartDate && selectedDateValue === "2026-05-31") {
+      if (selectedDateValue === "2026-05-31") {
         lockBadge.style.display = "inline-block";
       } else {
         lockBadge.style.display = "none";
@@ -1619,6 +1636,23 @@ function updateThiruvananthapuramTracker() {
   } catch (e) {
     console.error("Error updating Thiruvananthapuram tracker:", e);
   }
+}
+
+function setThiruvananthapuramToday() {
+  const today = new Date();
+  const y = today.getFullYear();
+  const m = String(today.getMonth() + 1).padStart(2, "0");
+  const d = String(today.getDate()).padStart(2, "0");
+  const dateString = `${y}-${m}-${d}`;
+  document.getElementById("thiruvananthapuram-date").value = dateString;
+  handleThiruvananthapuramDateChange(dateString);
+}
+
+function handleThiruvananthapuramDateChange(val) {
+  if (!val) return;
+  const [y, m, d] = val.split("-");
+  document.getElementById("thiruvananthapuram-date-display").innerText = `${d}/${m}/${y}`;
+  updateThiruvananthapuramTracker();
 }
 
 function getThiruvananthapuramSmartInitialDate() {
