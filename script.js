@@ -271,8 +271,9 @@ function goHome(isInitialLoad = false) {
   const pdfVisible = pdfs && pdfs.style.display !== "none" && pdfs.style.display !== "";
   const aadharVisible = aadhar && aadhar.style.display !== "none" && aadhar.style.display !== "";
   const entertainmentVisible = entertainment && entertainment.style.display !== "none" && entertainment.style.display !== "";
+  const packingVisible = packing && packing.style.display !== "none" && packing.style.display !== "";
 
-  if (!isInitialLoad && currentDay === 0 && !pdfVisible && !aadharVisible && !entertainmentVisible) {
+  if (!isInitialLoad && currentDay === 0 && !pdfVisible && !aadharVisible && !entertainmentVisible && !packingVisible) {
     showToast("Currently on home screen");
     return;
   }
