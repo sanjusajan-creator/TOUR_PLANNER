@@ -215,12 +215,14 @@ export function goHome(isInitialLoad = false) {
   const navbar = document.querySelector('.navbar');
   const aadhar = document.getElementById('aadhar-section');
   const entertainment = document.getElementById('entertainment-page');
+  const packing = document.getElementById('packing-section');
 
   const pdfVisible = pdfs && pdfs.style.display !== 'none' && pdfs.style.display !== '';
   const aadharVisible = aadhar && aadhar.style.display !== 'none' && aadhar.style.display !== '';
   const entertainmentVisible = entertainment && entertainment.style.display !== 'none' && entertainment.style.display !== '';
+  const packingVisible = packing && packing.style.display !== 'none' && packing.style.display !== '';
 
-  if (!isInitialLoad && window.currentDay === 0 && !pdfVisible && !aadharVisible && !entertainmentVisible) {
+  if (!isInitialLoad && window.currentDay === 0 && !pdfVisible && !aadharVisible && !entertainmentVisible && !packingVisible) {
     showToast('Currently on home screen');
     return;
   }
@@ -274,6 +276,9 @@ export function goHome(isInitialLoad = false) {
 
   const entertainmentSection = document.getElementById('entertainment-page');
   if (entertainmentSection) entertainmentSection.style.display = 'none';
+
+  const packingSection = document.getElementById('packing-section');
+  if (packingSection) packingSection.style.display = 'none';
 
   if (typeof window.reinitScrollAnimations === 'function') {
     setTimeout(() => window.reinitScrollAnimations(), 100);
