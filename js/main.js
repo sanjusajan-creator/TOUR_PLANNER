@@ -15,6 +15,39 @@ let currentDay = 0;
 // Expose currentDay globally for navigation module
 window.currentDay = currentDay;
 
+/**
+ * Determine which day to show based on current date
+ * @returns {string} 'home' or 'dayN' where N is 1-10
+ */
+function getAutoDay() {
+  const now = new Date();
+  // Normalize current date to midnight to avoid time-of-day issues
+  const currentDate = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+  
+  // Tour period: 24 May 2026 to 2 June 2026 (inclusive)
+  const startDate = new Date(2026, 4, 24); // May is month 4 (0-indexed)
+  const endDate = new Date(2026, 5, 2);   // June is month 5 (0-indexed)
+  
+  // Before tour starts
+  if (currentDate < startDate) {
+    return 'home';
+  }
+  
+  // After tour ends
+  if (currentDate > endDate) {
+    return 'home';
+  }
+  
+  // Calculate day number (24 May = day 1)
+  const diffTime = currentDate - startDate;
+  const diffDays = Math.floor(diffTime / (1000 * 60 * 60 * 24));
+  const dayNumber = diffDays + 1;
+  
+  // Clamp day number to 1-10 (safety check)
+  const clampedDay = Math.max(1, Math.min(10, dayNumber));
+  return `day${clampedDay}`;
+}
+
 // DOM Ready initialization
 document.addEventListener('DOMContentLoaded', () => {
   console.log('Tour Planner: Initializing...');
@@ -42,8 +75,13 @@ document.addEventListener('DOMContentLoaded', () => {
   // Setup click handlers for navigation/actions
   setupEventDelegation();
 
-  // Initialize navigation - go to home
-  Navigation.goHome(true);
+  // Initialize navigation - auto-detect day based on current date
+  const autoDay = getAutoDay();
+  if (autoDay === 'home') {
+    Navigation.goHome(true);
+  } else {
+    Navigation.showDay(autoDay);
+  }
 
   // Initialize scroll observers for animations
   initScrollAnimations();
