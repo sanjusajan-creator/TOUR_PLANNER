@@ -3,10 +3,10 @@
 
 const CACHE_NAME = 'tour-planner-v2';
 const ASSETS_TO_CACHE = [
-  '/',
-  '/index.html',
-  '/style.css',
-  '/lib/pdf.js/pdf.min.js'
+  './',
+  './index.html',
+  './style.css',
+  './lib/pdf.js/pdf.min.js'
 ];
 
 // Install event - precache critical assets
@@ -60,7 +60,7 @@ self.addEventListener('fetch', (event) => {
   if (event.request.mode === 'navigate') {
     event.respondWith(
       fetch(event.request)
-        .catch(() => caches.match('/index.html'))
+        .catch(() => caches.match('./index.html'))
     );
     return;
   }

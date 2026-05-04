@@ -2,7 +2,7 @@
   "name": "Tour Planner",
   "short_name": "TourPlanner",
   "description": "Delhi-Agra-Jaipur Tour Planning App",
-  "start_url": "/index.html",
+  "start_url": "./index.html",
   "display": "standalone",
   "background_color": "#ffffff",
   "theme_color": "#ff6b35",
