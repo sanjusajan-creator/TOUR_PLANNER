@@ -52,6 +52,16 @@
 13. Train tracking updates progress automatically
 14. All destination images load from cache
 
+**Plans:** 5 plans
+
+**Plan list**
+
+- [ ] 01-01-PLAN.md — UI & Navigation
+- [ ] 01-02-PLAN.md — Train Tracking
+- [ ] 01-03-PLAN.md — Document Viewing
+- [ ] 01-04-PLAN.md — Entertainment & Utilities
+- [ ] 01-05-PLAN.md — PWA Features
+
 ### Scope Notes
 
 **UI hint:** yes

@@ -410,9 +410,11 @@ function setupKeyboardNavigation() {
       Navigation.showDay("day10");
     }
 
-    else if (!event.ctrlKey && ascii >= 48 && ascii <= 57) {
+    else if (!event.ctrlKey && ascii >= 49 && ascii <= 57) {
       const dayId = "day" + event.key;
       Navigation.showDay(dayId);
+    } else if (!event.ctrlKey && event.key === "0") {
+      Navigation.goHome();
     } else if (key === "h") {
         Navigation.goHome();
       } else if (key === "t") {

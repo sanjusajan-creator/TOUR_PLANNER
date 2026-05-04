@@ -139,9 +139,13 @@ function hideAll() {
    const entertainment = document.getElementById("entertainment-page");
    if (entertainment) entertainment.style.display = "none";
 
+   const packing = document.getElementById("packing-section");
+   if (packing) packing.style.display = "none";
+
    document.querySelectorAll("[id^=day]").forEach((d) => {
      d.style.display = "none";
      d.classList.remove("page-active");
+     d.classList.add("fade-hidden");
    });
 
    document.body.style.paddingTop = "0px";
@@ -262,6 +266,7 @@ function goHome(isInitialLoad = false) {
   const navbar = document.querySelector(".navbar");
   const aadhar = document.getElementById("aadhar-section");
   const entertainment = document.getElementById("entertainment-page");
+  const packing = document.getElementById("packing-section");
 
   const pdfVisible = pdfs && pdfs.style.display !== "none" && pdfs.style.display !== "";
   const aadharVisible = aadhar && aadhar.style.display !== "none" && aadhar.style.display !== "";
@@ -271,6 +276,13 @@ function goHome(isInitialLoad = false) {
     showToast("Currently on home screen");
     return;
   }
+
+  // Force hide ALL day sections before anything else
+  document.querySelectorAll("[id^=day]").forEach((d) => {
+    d.style.display = "none";
+    d.classList.remove("page-active");
+    d.classList.add("fade-hidden");
+  });
 
   hideAll();
   currentDay = 0;
@@ -321,6 +333,9 @@ function goHome(isInitialLoad = false) {
 
   const entertainmentSection = document.getElementById("entertainment-page");
   if (entertainmentSection) entertainmentSection.style.display = "none";
+
+  const packingSection = document.getElementById("packing-section");
+  if (packingSection) packingSection.style.display = "none";
 }
 
 function showPDFs() {
@@ -1252,48 +1267,6 @@ window.addEventListener("resize", () => {
   if (day4 && day4.style.display === "block") {
     initMarudharTrack();
     updateMarudharTracker();
-  }
-});
-
-document.addEventListener("keydown", function (event) {
-  const target = event.target;
-  const isTypingField =
-    target &&
-    (target.tagName === "INPUT" ||
-      target.tagName === "TEXTAREA" ||
-      target.tagName === "SELECT" ||
-      target.isContentEditable);
-
-  if (isTypingField) {
-    return;
-  }
-
-  const ascii = event.key.charCodeAt(0);
-  const key = event.key.toLowerCase();
-  const key2 = event.key;
-
-  if (event.ctrlKey && event.key === "1") {
-    event.preventDefault();
-    showDay("day10");
-  }
-
-  else if (!event.ctrlKey && ascii >= 49 && ascii <= 57) {
-    const dayId = "day" + event.key;
-    showDay(dayId);
-  } else if (key === "h") {
-    goHome();
-  } else if (key === "t") {
-    showPDFs();
-  } else if (key === "a") {
-    showAadhar();
-  } else if (key === "e") {
-    showEntertainment();
-  } else if (key2 === "ArrowRight") {
-    nextDay();
-  }
-
-  else if (key2 === "ArrowLeft") {
-    prevDay();
   }
 });
 

@@ -125,6 +125,12 @@ export function showDay(id) {
         updateSainikTracker();
       } else if (id === 'day2') {
         if (typeof updateTracker === 'function') updateTracker();
+      } else if (id === 'day6') {
+        setTimeout(() => {
+          if (typeof initRetroGridsInSection === 'function') {
+            initRetroGridsInSection('day6');
+          }
+        }, 500);
       }
     }, 10);
   }
